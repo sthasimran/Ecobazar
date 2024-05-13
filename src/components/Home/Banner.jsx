@@ -1,7 +1,7 @@
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
 
-function Home() {
+function Banner() {
   return (
     <section className="md:mx-auto md:px-28 px-3 mt-3">
       <div className="grid md:grid-flow-row-dense md:grid-cols-3 gap-6 ">
@@ -59,4 +59,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Banner;

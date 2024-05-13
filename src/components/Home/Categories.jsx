@@ -1,12 +1,12 @@
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
-import { data } from "../Data/Data";
+import { data } from "../../Data/Data";
 
 
 function Categories() {
   return (
     <section className="md:mx-auto md:px-28 px-3 mt-3">
-      <div className="">
+      <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="text-xl font-medium">Popular Categories</div>
           <div className="flex items-center gap-2 text-primary">

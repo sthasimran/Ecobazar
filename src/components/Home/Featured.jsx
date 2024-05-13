@@ -9,7 +9,7 @@ function Featured() {
   
       <section className="md:mx-auto md:px-28 px-3 mt-3">
         <div className="">
-        <div className="flex gap-8 border shadow-md">
+        <div className="flex gap-8 border shadow-md h-[100px]">
           <div className="flex gap-3 text-left items-center ">
             <div className="ml-8">
               <LiaShippingFastSolid size={40} color="green" />

@@ -3,7 +3,7 @@ import { GoArrowRight } from "react-icons/go";
 import CountdownTimer from "./CountdownTimer";
 
 function Offers() {
-  const targetDate = new Date("2024-05-10T00:00:00");
+  const targetDate = new Date("2024-05-24T00:00:00");
   return (
     <section className="container md:container:mx-auto md:px-28 px-3 mt-12">
       <div className="grid lg:grid-flow-row-dense lg:grid-cols-3 gap-10">
@@ -13,7 +13,7 @@ function Offers() {
             <p className="font-semibold text-3xl">Sale of the Month</p>
             <div className="container mx-auto">
              
-              <CountdownTimer targetDate={targetDate} />
+              <CountdownTimer targetDate={targetDate}  />
             </div>
             <div className="flex justify-center">
               <div className="flex items-center justify-center gap-2  bg-white text-primary rounded-3xl h-12 w-40 mt-4">

@@ -15,12 +15,16 @@ import eggplant from "../assets/image/eggplant.png";
 import freshFruit from "../assets/image/fruit.png";
 import greenApple from "../assets/image/green-apple.png";
 import lettuce from "../assets/image/lettuce.png";
+import mango from "../assets/image/mango.png";
 import meat from "../assets/image/meat.png";
 import oil from "../assets/image/oil.png";
 import orange from "../assets/image/orange.png";
 import potato from "../assets/image/potato.png";
+import redChilli from "../assets/image/red-chilli.png";
 import snacks from "../assets/image/snacks.png";
+import tomato from "../assets/image/tomato.png";
 import vegetable from "../assets/image/vegetable.png";
+
 
 // popular products
 const data = {
@@ -156,6 +160,7 @@ const data = {
       title: `Green Apple`,
       price: "$12.00",
       initial: "$24.00",
+      sale: "Sale 50%",
       rating: "4",
     },
   ],
@@ -217,7 +222,68 @@ const data = {
       initial: null,
       rating: "4",
     },
+    {
+      img: redChilli,
+      title: `Red Chili`,
+      price: "$12.00",
+      initial: null,
+      rating: "4",
+    },
+    {
+      img: tomato,
+      title: `Red Tomatos`,
+      price: "$9.00",
+      initial: "$20.99",
+      sale: "Sale 50%",
+      rating: "4",
+    },
+    {
+      img: mango,
+      title: `Surjapur Mango`,
+      price: "$34.00",
+      initial: null,
+      rating: "4",
+    },
   ],
+
+  featuredData: [
+    {
+      img: apple,
+      title: `Green Apple`,
+      initial: "$20.99",
+      price: "$14.99",
+      sale: `Sale 50%`,
+      rating: "4",
+    },
+    {
+      img: orange,
+      title: `Fresh Indian Malta`,
+      price: "$20.00",
+      initial: null,
+      rating: "4",
+    },
+    {
+      img: cabbage,
+      title: `Chinese Cabbage`,
+      price: "$12.00",
+      initial: null,
+      rating: "4",
+    },
+    {
+      img: lettuce,
+      title: `Green Lettuce`,
+      price: "$9.00",
+      initial: null,
+      rating: "4",
+    },
+    {
+      img: eggplant,
+      title: `Eggplant`,
+      price: "$34.00",
+      initial: null,
+      rating: "4",
+    },
+  ]
 };
 
 export { data };

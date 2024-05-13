@@ -1,23 +1,15 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import Categories from "./components/Categories";
-import Featured from "./components/Featured";
-import Home from "./components/Home";
-import HotDeals from "./components/HotDeals";
-import Navbar from "./components/Navbar";
-import Offers from "./components/Offers";
-import Products from "./components/Products";
+import FooterBar from "./components/Home/FooterBar";
+import Navbar from "./components/Home/Navbar";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
-      <Featured />
-      <Categories />
-      <Products />
-      <Offers />
-      <HotDeals/>
-   
+      <Outlet/>
+      <FooterBar/>
+      
     </>
   );
 }

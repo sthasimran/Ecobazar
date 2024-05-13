@@ -3,10 +3,10 @@ import React from "react";
 import { GoArrowRight, GoHeart } from "react-icons/go";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoEyeOutline } from "react-icons/io5";
-import { data } from "../Data/Data";
+import { data } from "../../Data/Data";
 function Products() {
   return (
-    <section className="mt-5 mb-2 md:mx-auto md:px-28 px-3">
+    <section className="mt-5 mb-2 md:mx-auto md:px-28 px-3 ">
       <div className="">
         <div className="flex justify-between">
           <div className="text-xl font-medium">Popular Products</div>
@@ -20,7 +20,7 @@ function Products() {
               key={index}
               className=" group/item flex flex-col items-center relative "
             >
-              <div className=" border hover:border-[#20B526] hover:shadow-md ">
+              <div className=" border relative group hover:border-[#20B526] hover:shadow-md ">
                 <img src={item.img} alt="" className="" />
                 <div className="ml-2">
                   <p className="text-gray-500">{item.title}</p>
@@ -50,21 +50,21 @@ function Products() {
                 {/* <div className=" absolute top-4 left-4 h-[27px] w-[80px] bg-red-600 rounded text-[14px] font-normal text-white items-center justify-center">
                   <p className=" p-1 ml-1">Sale 50%</p>
                 </div> */}
-              </div>
-              <div className="absolute top-4 right-4 flex flex-col justify-between">
+              <div className="  flex flex-col justify-between">
                 <div className="group/edit invisible flex flex-col gap-3 group-hover/item:visible">
-                  <div className="group-hover/edit w-8 h-8 rounded-full flex items-center justify-center  bg-slate-100 hover:bg-primary">
+                  <div className="group-hover/edit absolute right-2 top-2  w-8 h-8 rounded-full flex items-center justify-center  bg-slate-100 hover:bg-primary">
                     <GoHeart className="" color="black" size={20} />
                   </div>
-                  <div className="w-8 h-8  bg-slate-100 rounded-full flex items-center justify-center hover:bg-primary">
+                  <div className="w-8 h-8 absolute right-2 top-12 bg-slate-100 rounded-full flex items-center justify-center hover:bg-primary">
                     <IoEyeOutline className="" color="black" size={20} />
                   </div>
                 </div>
-
-                <div className="mt-28 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white group-hover/edit:bg-slate-400">
-                  <HiOutlineShoppingBag className="" />
+                </div>
+                <div className="absolute right-2 bottom-6 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center  group-hover:bg-green-500 group-hover:text-white ">
+                  <HiOutlineShoppingBag className=" " />
                 </div>
               </div>
+             
             </div>
           ))}
         </div>
