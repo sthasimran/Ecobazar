@@ -20,7 +20,7 @@ import meat from "../assets/image/meat.png";
 import oil from "../assets/image/oil.png";
 import orange from "../assets/image/orange.png";
 import potato from "../assets/image/potato.png";
-import redChilli from "../assets/image/red-chilli.png";
+import redPepper from "../assets/image/red-chilli.png";
 import snacks from "../assets/image/snacks.png";
 import tomato from "../assets/image/tomato.png";
 import vegetable from "../assets/image/vegetable.png";
@@ -36,6 +36,8 @@ const data = {
       price: "$14.99",
       sale: `Sale 50%`,
       rating: "4",
+      Categories: `Fresh Fruit`,
+
     },
     {
       img: orange,
@@ -43,6 +45,7 @@ const data = {
       price: "$20.00",
       initial: null,
       rating: "4",
+      Categories:`Fresh Fruit`,
     },
     {
       img: cabbage,
@@ -50,6 +53,7 @@ const data = {
       price: "$12.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: lettuce,
@@ -57,6 +61,7 @@ const data = {
       price: "$9.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: eggplant,
@@ -64,6 +69,7 @@ const data = {
       price: "$34.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: potato,
@@ -71,6 +77,7 @@ const data = {
       price: "$20.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: corn,
@@ -78,6 +85,7 @@ const data = {
       price: "$20.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: cauliflower,
@@ -85,6 +93,7 @@ const data = {
       price: "$12.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: capsicum,
@@ -93,6 +102,7 @@ const data = {
       initial: "$9.00",
       sale: `Sale 50%`,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: chilly,
@@ -100,6 +110,7 @@ const data = {
       price: "$34.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
   ],
 
@@ -162,6 +173,7 @@ const data = {
       initial: "$24.00",
       sale: "Sale 50%",
       rating: "4",
+      Categories: `Fresh Fruit`,
     },
   ],
   hotDealsAll: [
@@ -171,6 +183,7 @@ const data = {
       price: "$12.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: eggplant,
@@ -178,6 +191,7 @@ const data = {
       price: "$34.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: lettuce,
@@ -185,6 +199,7 @@ const data = {
       price: "$9.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: cauliflower,
@@ -192,6 +207,7 @@ const data = {
       price: "$12.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: capsicum,
@@ -200,6 +216,7 @@ const data = {
       initial: "$9.00",
       sale: `Sale 50%`,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: chilly,
@@ -207,6 +224,7 @@ const data = {
       price: "$34.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: potato,
@@ -214,6 +232,7 @@ const data = {
       price: "$20.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: corn,
@@ -221,13 +240,15 @@ const data = {
       price: "$20.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
-      img: redChilli,
+      img: redPepper,
       title: `Red Chili`,
       price: "$12.00",
       initial: null,
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: tomato,
@@ -236,6 +257,7 @@ const data = {
       initial: "$20.99",
       sale: "Sale 50%",
       rating: "4",
+      Categories:`Vegetable`,
     },
     {
       img: mango,
@@ -243,6 +265,7 @@ const data = {
       price: "$34.00",
       initial: null,
       rating: "4",
+      Categories:`Fresh Fruits`,
     },
   ],
 
@@ -254,6 +277,7 @@ const data = {
       price: "$14.99",
       sale: `Sale 50%`,
       rating: "4",
+      Categories: `Fresh Fruit`,
     },
     {
       img: orange,
@@ -261,6 +285,7 @@ const data = {
       price: "$20.00",
       initial: null,
       rating: "4",
+      Categories: `Fresh Fruit`,
     },
     {
       img: cabbage,
@@ -283,6 +308,7 @@ const data = {
       initial: null,
       rating: "4",
     },
+    
   ]
 };
 

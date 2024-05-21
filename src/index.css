@@ -8,9 +8,20 @@
 
 
 .slick-prev {
-background-color: red;
+
+display: none;
 }
 
 .slick-next{
-    @apply bg-red-500 
+    @apply bg-[#F2F2F2] 
 }
+.MuiSlider-track {
+    color: #19d229;;
+  }
+  .MuiSlider-thumb {
+    color: #19d229;
+    border-color: black;
+  }
+  .MuiSlider-rail {
+    color: grey;
+  }

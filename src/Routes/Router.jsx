@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Pages from "../../Pages";
-import Shop from "../../Shop";
 import App from "../App";
 import Home from "../Home";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
+import Shop from "../Shops/Shop";
 
 const Move = createBrowserRouter([
   {

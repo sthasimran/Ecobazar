@@ -10,10 +10,10 @@ import Secure from "../../assets/image/secure.png";
 
 function FooterBar() {
   return (
-    <section>
-      <div className="md:mx-auto md:px-28 px-3 py-3 mt-10 bg-[#F7F7F7] md:h-24">
+    <section >
+      <div className="md:mx-auto md:px-28 px-3 py-3 m-10  bg-[#F7F7F7] md:h-24">
         <div className="flex items-center justify-center gap-16 ">
-          <div className="flex flex-col   ">
+          <div className="flex flex-col  p-2 ">
             <p className=" font-semibold text-[24px] leading-9">
               Subscribe our Newsletter
             </p>
@@ -60,7 +60,7 @@ function FooterBar() {
         </div>
       </div>
       <footer className="bg-[#1A1A1A] ">
-        <div className="md:mx-auto md:px-28 px-3 mt-3 py-8  text-white">
+        <div className="md:mx-auto md:px-28 px-3  py-8  text-white">
           <div className="grid grid-cols-6 space-x-10  ">
             <div className="flex flex-col gap-2 col-span-2">
               <div className=" text-center">
