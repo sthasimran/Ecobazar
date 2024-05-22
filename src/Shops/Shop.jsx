@@ -3,6 +3,7 @@ import { data } from "../Data/db";
 import Card from "../components/ShopComponent/Card";
 import BottomShop from "../components/SidebarShop/BottomShop";
 import Breadcrums from "../components/SidebarShop/Breadcrums";
+import PaginationComponent from "../components/SidebarShop/PaginationComponent";
 import TopShop from "../components/SidebarShop/TopShop";
 
 const Shop = () => {
@@ -20,7 +21,7 @@ const Shop = () => {
     products.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1)
   );
 
-  //-----Radio Filter---
+  //-----Radio Filter + SortMenu---
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
   };
@@ -42,8 +43,12 @@ const Shop = () => {
     // filtering selected items
     if (selected) {
       filteredProducts = filteredProducts.filter(
-        ({ category, price, tag, rating }) =>
-          category === selected || price === selected || tag === selected || rating === selected
+        ({ category, price, tag, rating, list }) =>
+          category === selected ||
+          price === selected ||
+          tag === selected ||
+          rating === selected ||
+          list === selected
       );
     }
     return filteredProducts.map(
@@ -67,13 +72,14 @@ const Shop = () => {
   console.log(result);
   return (
     <div>
-      <Breadcrums/>
-      <TopShop result={result} />
+      <Breadcrums />
+      <TopShop result={result} handleChange={handleChange} />
       <BottomShop
         handleChange={handleChange}
         handleClick={handleClick}
         result={result}
       />
+      <PaginationComponent className="text-center"/>
     </div>
   );
 };

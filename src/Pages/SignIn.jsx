@@ -9,7 +9,7 @@ import * as Yup from "yup";
 const SignIn = () => {
   return (
     <section className=" bg-slate-100 ">
-      <div className="md:mx-auto md:px-28 px-3  h-[100px] w-full bg-[url('./assets/image/bg-sign.jpg')] bg-cover flex items-center justify-start">
+      <div className="md:mx-auto md:px-28  h-[100px] w-full bg-[url('./assets/image/bg-sign.jpg')] bg-cover flex items-center justify-start">
         <div>
           <GoHome color="grey" size={25} />
         </div>
@@ -30,8 +30,10 @@ const SignIn = () => {
         </NavLink>
       </div>
 
-      <div className="flex justify-center items-center h-screen ">
-        <div className="p-6 shadow-lg rounded-md w-[520px] bg-[#FFFFFF] ">
+
+
+      <div className="flex justify-center items-center h-[500px] ">
+        <div className="p-6 shadow-lg rounded-md w-[450px] bg-[#FFFFFF] ">
           <h5 className="font-semibold text-[32px] leading-[38px] text-[#1A1A1A] text-center mb-[20px]">
             Sign In
           </h5>

@@ -1,4 +1,3 @@
-import { Rating } from "flowbite-react";
 import React from "react";
 import { GoArrowRight, GoHeart } from "react-icons/go";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -20,7 +19,7 @@ function Products() {
               key={index}
               className=" group/item flex flex-col items-center relative "
             >
-              <div className=" border relative group hover:border-[#20B526] hover:shadow-md ">
+              <div className=" border relative group hover:border-[#20B526] hover:shadow-md p-3">
                 <img src={item.img} alt="" className="" />
                 <div className="ml-2">
                   <p className="text-gray-500">{item.title}</p>
@@ -30,15 +29,14 @@ function Products() {
                   </div>
                   
                   {/* <p className="">{item.rating}</p> */}
-                  <div className="">
-                    <Rating className="">
-                      <Rating.Star fill="orange" fontSize={20} />
-                      <Rating.Star fill="orange" fontSize={20} />
-                      <Rating.Star fill="orange" fontSize={20} />
-                      <Rating.Star fill="orange" fontSize={20} />
-                      <Rating.Star filled={false} fontSize={20} />
-                    </Rating>
-                  </div>
+                  <div className="flex items-center">
+                  <span className="text-[#FFA500] text-[24px] " >
+                    {"★".repeat(Math.round(item.rating))}
+                  </span>
+                  <span className="text-gray-400 text-[24px]">
+                    {"★".repeat(5 - Math.round(item.rating))}
+                  </span>
+                </div>
                 </div>
                 {item.sale ? (
                 <span className="absolute bg-[#EA4B48] text-white text-[14px] px-[8px] py-[8px] rounded-md top-[16px] left-[16px]">

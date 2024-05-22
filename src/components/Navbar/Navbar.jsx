@@ -99,12 +99,17 @@ function Navbar() {
                 </div>
               </div>
             </div>
+           
             <div className="relative w-7 h-7 ml-2">
+            <NavLink to="/cart">
               <HiOutlineShoppingBag size={30} />
+              </NavLink>
               <div className="absolute top-[1px] right-[-2px] bg-primary w-4 h-4 rounded-full flex justify-center items-center text-[10px] text-white">
                 2
               </div>
+              
             </div>
+            
 
             <div className="text-left ml-2">
               <p className="text-[12px] leading-[13.2px] font-normal text-[#4D4D4D]">

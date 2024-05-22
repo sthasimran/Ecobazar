@@ -1,4 +1,3 @@
-import { Rating } from "flowbite-react";
 import React from "react";
 import greenCapsicum from "../../assets/image/capsicum.png";
 import mango from "../../assets/image/mango.png";
@@ -10,7 +9,7 @@ const products = [
     title: "Red Capsicum",
     price: "$32.00",
     initial: "$40.99",
-    rating: "4",
+    rating: "5",
   },
   {
     img: mango,
@@ -24,20 +23,25 @@ const products = [
     title: "Green Capsicum",
     price: "$32.00",
     initial: "$40.99",
-    rating: "4",
+    rating: "3",
   },
 ];
 const SaleProducts = () => {
   return (
     <div className="pt-[20px]">
       <div>
-        <h2 className="text-xl font-medium text-[#1A1A1A] mb-3">Sale Products</h2>
+        <h2 className="text-xl font-medium text-[#1A1A1A] mb-3">
+          Sale Products
+        </h2>
       </div>
       <div className="  flex flex-col gap-2">
         {products.map((item, index) => (
-          <div key={index} className="flex items-center border rounded-md hover:border-primary hover:shadow-xl">
+          <div
+            key={index}
+            className="flex items-center border rounded-md hover:border-primary hover:shadow-xl"
+          >
             <div>
-              <img src={item.img} className="h-[112px] w-[112px]"  />
+              <img src={item.img} className="h-[112px] w-[112px]" />
             </div>
             <div>
               <p className="text-sm font-normal text-[#4D4D4D]">{item.title}</p>
@@ -45,17 +49,15 @@ const SaleProducts = () => {
                 <p>{item.price}</p>
                 <del className="text-[#999999]">{item.initial}</del>
               </div>
-              <div className="">
-              <Rating className="">
-                <Rating.Star fill="orange" fontSize={20} />
-                <Rating.Star fill="orange" fontSize={20} />
-                <Rating.Star fill="orange" fontSize={20} />
-                <Rating.Star fill="orange" fontSize={20} />
-                <Rating.Star filled="" fontSize={20} />
-              </Rating>
+              <div className="flex items-center">
+                <span className="text-[#FFA500] text-[24px] ">
+                  {"★".repeat(Math.round(item.rating))}
+                </span>
+                <span className="text-gray-400 text-[24px]">
+                  {"★".repeat(5 - Math.round(item.rating))}
+                </span>
+              </div>
             </div>
-            </div>
-            
           </div>
         ))}
       </div>

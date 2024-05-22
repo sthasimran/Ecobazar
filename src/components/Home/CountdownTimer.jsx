@@ -34,7 +34,7 @@ const CountdownTimer = ({ targetDate }) => {
           <span className=" flex justify-center items-center text-[#FBFAF8] text-[24px] font-medium rounded-md">
             {timeLeft?.days}
           </span>
-          <span className=" text-[12px] text-[#FBFAF8] font-medium">
+          <span className=" text-[12px] text-[#FBFAF8] font-medium ">
             {timeLeft?.days == 1 ? "Day" : "Days"}
           </span>
         </div>
@@ -43,27 +43,31 @@ const CountdownTimer = ({ targetDate }) => {
         </div>
       </div>
       <div className="flex">
-      <div className="flex flex-col justify-center items-center ">
-        <span className="flex justify-center items-center text-[#FBFAF8] text-[24px] font-medium rounded-md">
-          {timeLeft?.hours}
-        </span>
-        <span className="text-[12px] text-[#FBFAF8] font-medium">
-          {timeLeft?.hours == 1 ? "Hour" : "Hours"}
-        </span>
-      </div>
-      <div>
+        <div className="flex flex-col justify-center items-center ">
+          <span className="flex justify-center items-center text-[#FBFAF8] text-[24px] font-medium rounded-md">
+            {timeLeft?.hours}
+          </span>
+          <span className="text-[12px] text-[#FBFAF8] font-medium">
+            {timeLeft?.hours == 1 ? "Hour" : "Hours"}
+          </span>
+        </div>
+        <div>
           <p>:</p>
         </div>
       </div>
 
-      
-      <div className="flex flex-col justify-center items-center">
-        <span className="flex justify-center items-center text-[#FBFAF8] text-[24px] font-medium rounded-md">
-          {timeLeft?.minutes}
-        </span>
-        <span className="text-[12px] text-[#FBFAF8] font-medium">
-          {timeLeft?.minutes == 1 ? "Minute" : "Minutes"}
-        </span>
+      <div className="flex">
+        <div className="flex flex-col justify-center items-center">
+          <span className="flex justify-center items-center text-[#FBFAF8] text-[24px] font-medium rounded-md">
+            {timeLeft?.minutes}
+          </span>
+          <span className="text-[12px] text-[#FBFAF8] font-medium">
+            {timeLeft?.minutes == 1 ? "Minute" : "Minutes"}
+          </span>
+        </div>
+        <div>
+          <p>:</p>
+        </div>
       </div>
       <div className="flex flex-col justify-center items-center">
         <span className="flex justify-center items-center text-[#FBFAF8] text-[24px] font-medium rounded-md">

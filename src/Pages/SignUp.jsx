@@ -41,8 +41,8 @@ const SignUp = () => {
         </NavLink>
       </div>
 
-      <div className="flex justify-center items-center h-screen ">
-        <div className="p-6 shadow-lg rounded-md w-[520px] bg-white ">
+      <div className="flex justify-center items-center h-[550px] ">
+        <div className="p-6 shadow-lg rounded-md w-[500px] bg-white ">
           <h5 className="font-semibold text-[32px] leading-[38px] text-[#1A1A1A] text-center mb-[20px]">
             Create Account
           </h5>

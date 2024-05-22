@@ -14,28 +14,33 @@ const TopShop = ({ result, handleChange }) => {
             </button>
           </div>
           <div>
-            <label for="items" className="mr-3">
+            <label for="items" className="mr-3 text-[#808080] font-normal">
               Sort by:
             </label>
             <select
               id="items"
-              className="p-1 border rounded-md px-5 "
+              className="p-1 border rounded-md w-48 text-[#4D4D4D] text-[14px] leading-[21px] font-normal"
               onChange={handleChange}
             >
               <DropMenu
                 handleChange={handleChange}
-                list="Latest"
                 value="Latest"
+                title="Latest Products"
               />
               <DropMenu
                 handleChange={handleChange}
-                list="Popular"
                 value="Popular"
+                title="Popular Products"
               />
               <DropMenu
                 handleChange={handleChange}
-                list="Hot Deals"
                 value="HotDeals"
+                title="Hot Deal Products"
+              />
+              <DropMenu
+                handleChange={handleChange}
+                value="Featured"
+                title="Featured Products"
               />
             </select>
 

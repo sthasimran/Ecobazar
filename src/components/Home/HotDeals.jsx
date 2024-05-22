@@ -1,4 +1,3 @@
-import { Rating } from "flowbite-react";
 import React from "react";
 import { GoArrowRight, GoHeart } from "react-icons/go";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -7,7 +6,7 @@ import { data } from "../../Data/Data";
 import CountdownTimer from "../Home/CountdownTimer";
 
 function HotDeals() {
-  const targetDate = new Date("2024-05-10T00:00:00");
+  const targetDate = new Date("2024-07-10T00:00:00");
   return (
     <section className="mt-5 mb-2 md:mx-auto md:px-28 px-3">
       <div>
@@ -48,21 +47,25 @@ function HotDeals() {
                       <p className="text line-through">{item.initial}</p>
                     </div>
 
-                  
                     <div className="flex gap-2">
-                      <Rating className="">
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star fill="orange" fontSize={20} />
-                      </Rating>
+                      <div className="flex items-center">
+                        <span className="text-[#FFA500] text-[24px] ">
+                          {"★".repeat(Math.round(item.rating))}
+                        </span>
+                        <span className="text-gray-400 text-[24px]">
+                          {"★".repeat(5 - Math.round(item.rating))}
+                        </span>
+                      </div>
                       <p className="text-gray-500">(524 Feedback)</p>
                     </div>
                     <div className="text-gray-500 flex flex-col items-center">
                       <span className="">Hurry up! Offer ends in:</span>
                       <div className="">
-                        <CountdownTimer className="" color="black" targetDate={targetDate} />
+                        <CountdownTimer
+                          className="text-black bg-black"
+                          color="black"
+                          targetDate={targetDate}
+                        />
                       </div>
                     </div>
                   </div>
@@ -89,8 +92,8 @@ function HotDeals() {
                 key={index}
                 className=" flex flex-col items-center relative  "
               >
-                <div className=" border hover:border-[#20B526] hover:shadow-md ">
-                  <img src={item.img} alt="" className="" />
+                <div className=" border hover:border-[#20B526] hover:shadow-md p-2 ">
+                  <img src={item.img} alt="" className="h-[200px] " />
                   <div className="ml-5">
                     <p className="text-gray-500">{item.title}</p>
                     <div className="flex gap-2">
@@ -99,14 +102,14 @@ function HotDeals() {
                     </div>
 
                     {/* <p className="">{item.rating}</p> */}
-                    <div className="mb-6">
-                      <Rating className="">
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star fill="orange" fontSize={20} />
-                        <Rating.Star filled={false} fontSize={20} />
-                      </Rating>
+
+                    <div className="flex items-center">
+                      <span className="text-[#FFA500] text-[24px] ">
+                        {"★".repeat(Math.round(item.rating))}
+                      </span>
+                      <span className="text-gray-400 text-[24px]">
+                        {"★".repeat(5 - Math.round(item.rating))}
+                      </span>
                     </div>
                   </div>
                   {item.sale ? (

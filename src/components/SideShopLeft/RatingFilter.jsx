@@ -18,7 +18,7 @@ const RatingFilter = ({ handleChange }) => {
       {showRating && (
         <div className="">
           <label className="flex items-center gap-2">
-            <input type="checkbox" name="rating" />
+            <input type="radio" name="rating" className="radio-container" />
             <span className="flex">
               <AiFillStar color="orange" /> <AiFillStar color="orange" />{" "}
               <AiFillStar color="orange" /> <AiFillStar color="orange" />{" "}
