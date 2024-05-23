@@ -19,7 +19,7 @@ const Breadcrumbs = () => {
             <FaAngleRight color="grey" size={20} />
           </div>
           <NavLink
-            to="/shop"
+            to=""
             className={({ isActive }) =>
               isActive ? "text-green-500" : "text-white"
             }

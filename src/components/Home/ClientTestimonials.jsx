@@ -65,16 +65,16 @@ function ClientTestimonials() {
   };
   return (
     <section className="md:mx-auto md:px-28 px-3 mt-3 bg-[#F2F2F2] py-[60px]">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <div className="text-xl font-medium">Client Testimonials</div>
 
         <div className="slider-buttons items-center justify-center">
           {/* Slider buttons */}
-          <button onClick={() => slider && slider.slickPrev()} class><div className='h-[35px] w-[35px] rounded-full items-center justify-center pt-[7px] pl-[7px] bg-white hover:bg-primary hover:text-white'><FaArrowLeftLong size={20} /></div></button> {/* Added check for slider reference */}
-          <button onClick={() => slider && slider.slickNext()} class><div className='h-[35px] w-[35px] rounded-full items-center justify-center pt-[7px] pl-[7px] bg-white hover:bg-primary hover:text-white'><FaArrowRightLong size={20} /></div></button> {/* Added check for slider reference */}
+          <button onClick={() => slider && slider.slickPrev()} class><div className='h-[35px] w-[35px] rounded-full flex items-center justify-center  bg-white hover:bg-primary hover:text-white'><FaArrowLeftLong size={20} /></div></button> {/* Added check for slider reference */}
+          <button onClick={() => slider && slider.slickNext()} class><div className='h-[35px] w-[35px] rounded-full flex items-center justify-center  bg-white hover:bg-primary hover:text-white'><FaArrowRightLong size={20} /></div></button> {/* Added check for slider reference */}
         </div>
       </div>
-      <div className="slider-container gap-5">
+      <div className="slider-container gap-5 mt-3">
         <Slider {...settings} ref={slider => setSlider(slider)}> {/* Set slider reference */}
           {data.map((item, index) => (
             <div className='border-[1px] p-4 bg-white' key={index}> {/* Added key */}

@@ -1,23 +1,27 @@
 import { Button } from "flowbite-react";
 import React from "react";
 import { TiDeleteOutline } from "react-icons/ti";
-import greenCapsicum from "../assets/image/capsicum.png";
-import redCapsicum from "../assets/image/red-chilli.png";
-import Breadcrumbs from "../components/SidebarShop/Breadcrums";
+import greenCapsicum from "../../assets/image/capsicum.png";
+import redCapsicum from "../../assets/image/red-chilli.png";
+import Breadcrumbs from "../../components/SidebarShop/Breadcrums";
+import Coupon from "./Coupon";
+
 const Cart = () => {
   return (
     <div>
       <Breadcrumbs />
-      <section className=" mt-5 mb-2 md:mx-auto md:px-28 px-3">
+      <section className=" m-12 md:mx-auto md:px-28 px-3">
         <div>
           <p className="text-center text-[32px] leading-9 font-semibold">
             My Shopping Cart
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 mt-5">
+
           <div className=" col-span-2">
-            <div className="overflow-auto rounded-lg shadow hidden md:block">
+            <div>
+            <div className="overflow-auto rounded-lg shadow md:block">
               <table className="w-full">
                 <thead className=" border-b-2 border-gray-200">
                   <tr>
@@ -35,7 +39,7 @@ const Cart = () => {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y">
+                <tbody className="divide-y border-b">
                   <tr className="bg-white">
                     <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
                       <div className="flex items-center gap-2">
@@ -94,14 +98,18 @@ const Cart = () => {
                     </td>
                   </tr>
                 </tbody>
-                <tfoot>
-                  <div className="flex item-center justify-between">
-                    <div>return</div>
-                    <div>update</div>
-                  </div>
-                </tfoot>
               </table>
             </div>
+            <div className="flex item-center justify-between my-3 p-2 border">
+                <div className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D]">
+                  Return to shop
+                </div>
+                <div className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D]">
+                  Update Cart
+                </div>
+              </div>
+              </div>
+            <Coupon />
           </div>
 
           <div className="col-span-1">
@@ -116,7 +124,9 @@ const Cart = () => {
                           Subtotal:
                         </th>
 
-                        <td className="px-4 py-2 border-b text-[#1A1A1A] text-sm font-semibold">$84.00</td>
+                        <td className="px-4 py-2 border-b text-[#1A1A1A] text-sm font-semibold">
+                          $84.00
+                        </td>
                       </tr>
 
                       <tr>
@@ -124,7 +134,9 @@ const Cart = () => {
                           Shipping:
                         </th>
 
-                        <td className="px-4 py-2 border-b text-[#1A1A1A] text-sm font-semibold">Free</td>
+                        <td className="px-4 py-2 border-b text-[#1A1A1A] text-sm font-semibold">
+                          Free
+                        </td>
                       </tr>
 
                       <tr>
@@ -132,19 +144,21 @@ const Cart = () => {
                           Total:
                         </th>
 
-                        <td className="px-4 py-2 border-b text-[#1A1A1A] text-sm font-semibold">$84.00</td>
+                        <td className="px-4 py-2 border-b text-[#1A1A1A] text-sm font-semibold">
+                          $84.00
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <div className="my-4">
-                <Button
-                  type="submit"
-                  className="w-full bg-primary rounded-full hover:bg-transparent hover:text-[#1A1A1A] "
-                >
-                  Proceed to checkout
-                </Button>
-              </div>
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary rounded-full  hover:bg-[#2C742F] duration-150 "
+                  >
+                    Proceed to checkout
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

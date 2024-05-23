@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Pages from "../../Pages";
 import App from "../App";
 import Home from "../Home";
-import Cart from "../Pages/Cart";
+import Cart from "../Pages/Cart/Cart";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
 import Shop from "../Shops/Shop";

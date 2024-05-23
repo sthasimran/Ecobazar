@@ -9,6 +9,7 @@ import * as Yup from "yup";
 const SignIn = () => {
   return (
     <section className=" bg-slate-100 ">
+    
       <div className="md:mx-auto md:px-28  h-[100px] w-full bg-[url('./assets/image/bg-sign.jpg')] bg-cover flex items-center justify-start">
         <div>
           <GoHome color="grey" size={25} />
@@ -30,7 +31,7 @@ const SignIn = () => {
         </NavLink>
       </div>
 
-
+   
 
       <div className="flex justify-center items-center h-[500px] ">
         <div className="p-6 shadow-lg rounded-md w-[450px] bg-[#FFFFFF] ">
@@ -133,6 +134,8 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+
+      
     </section>
   );
 };
