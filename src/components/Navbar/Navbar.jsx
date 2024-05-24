@@ -120,7 +120,7 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="flex justify-between text-center mt-5 md:mx-auto md:px-28 px-3 bg-[#333333]  h-14">
+        <div className="flex justify-between text-center mt-5 md:mx-auto md:px-28  bg-[#333333]  ">
           <div>
             <ul className="text-grey md:flex space-x-8 m-5">
               {navItems.map((value, index) => (
