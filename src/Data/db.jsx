@@ -28,6 +28,7 @@ const data = [
   //   tag: ``,
   // },
   {
+    id: 1,
     img: potato,
     title: `Big Potatoes`,
     price: "$20.00",
@@ -40,6 +41,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 2,
     img: orange,
     title: `Fresh Indian Malta`,
     price: "$20.00",
@@ -52,6 +54,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 3,
     img: cabbage,
     title: `Chinese Cabbage`,
     price: "$12.00",
@@ -64,6 +67,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 4,
     img: lettuce,
     title: `Green Lettuce`,
     price: "$9.00",
@@ -76,6 +80,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 5,
     img: corn,
     title: `Corn`,
     price: "$20.00",
@@ -88,6 +93,7 @@ const data = [
     outOfStock: `outOfStock`,
   },
   {
+    id: 6,
     img: eggplant,
     title: `Eggplant`,
     price: "$34.00",
@@ -100,6 +106,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 7,
     img: cauliflower,
     title: `Fresh Cauliflower`,
     price: "$12.00",
@@ -112,6 +119,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 8,
     img: greenApple,
     title: `Green Apple`,
     price: "$12.00",
@@ -124,6 +132,7 @@ const data = [
     category: `FreshFruit`,
   },
   {
+    id: 9,
     img: capsicum,
     title: `Green Capsicum`,
     price: "$20.99",
@@ -136,6 +145,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 10,
     img: chilly,
     title: `Green Chilli`,
     price: "$34.00",
@@ -148,6 +158,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 11,
     img: Cucumber,
     title: `Red Chili`,
     price: "$12.00",
@@ -160,6 +171,7 @@ const data = [
     list: `Featured`,
   },
   {
+    id: 12,
     img: redChilli,
     title: `Red Chili`,
     price: "$12.00",
@@ -172,6 +184,7 @@ const data = [
     list: `Popular`,
   },
   {
+    id: 13,
     img: LadyFinger,
     title: `Lady Finger`,
     price: "$12.00",
@@ -184,6 +197,7 @@ const data = [
     list: `Featured`,
   },
   {
+    id: 14,
     img: redPepper,
     title: `Red Pepper`,
     price: "$12.00",
@@ -196,6 +210,7 @@ const data = [
     list: `HotDeals`,
   },
   {
+    id: 15,
     img: tomato,
     title: `Red Tomatos`,
     price: "$9.00",
@@ -208,6 +223,7 @@ const data = [
     list: `HotDeals`,
   },
   {
+    id: 16,
     img: mango,
     title: `Surjapur Mango`,
     price: "$34.00",

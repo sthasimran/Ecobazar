@@ -78,6 +78,7 @@ const data = {
       initial: null,
       rating: "4",
       Categories:`Vegetable`,
+      related: true,
     },
     {
       img: corn,
@@ -94,6 +95,7 @@ const data = {
       initial: null,
       rating: "4",
       Categories:`Vegetable`,
+      related: true,
     },
     {
       img: capsicum,
@@ -103,6 +105,7 @@ const data = {
       sale: `Sale 50%`,
       rating: "4",
       Categories:`Vegetable`,
+      related: true,
     },
     {
       img: chilly,
@@ -111,6 +114,7 @@ const data = {
       initial: null,
       rating: "4",
       Categories:`Vegetable`,
+      related: true,
     },
   ],
 

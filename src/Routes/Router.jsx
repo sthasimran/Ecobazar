@@ -4,7 +4,7 @@ import Home from "../Home";
 import Cart from "../Pages/Cart/Cart";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
-import SingleProduct from "../Pages/SingleProduct";
+import SingleProduct from "../Pages/SingleProductPage/SingleProduct";
 import Shop from "../Shops/Shop";
 
 const Move = createBrowserRouter([

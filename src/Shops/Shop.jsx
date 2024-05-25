@@ -52,17 +52,17 @@ const Shop = () => {
       );
     }
     return filteredProducts.map(
-      ({ img, title, price, initial, rating, category, sale, outOfStock }) => (
+      (value, index) => (
         <Card
-          key={Math.random()}
-          img={img}
-          title={title}
-          price={price}
-          initial={initial}
-          sale={sale}
-          rating={rating}
-          category={category}
-          outOfStock={outOfStock}
+          key={index}
+          img={value.img}
+          title={value.title}
+          price={value.price}
+          initial={value.initial}
+          sale={value.sale}
+          rating={value.rating}
+          category={value.category}
+          outOfStock={value.outOfStock}
         />
       )
     );
