@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import TagButton from "../ShopComponent/TagButton";
 
-const PopularTag = ({ handleClick }) => {
+import TagButton from "../ShopComponent/TagButton";
+const PopularTag = () => {
   const [showTag, setShowTag] = useState(true);
   const handleClick1 = () => {
     setShowTag(!showTag);
   };
+
+  
   return (
     <div className="border-b">
       <div
@@ -20,8 +22,10 @@ const PopularTag = ({ handleClick }) => {
       </div>
       {showTag && (
         <div className="mt-4 ">
-          <div className="flex items-center mb-2  flex-wrap gap-2 ">
-            <TagButton
+          <div className="">
+            <TagButton />
+
+            {/* <TagButton
               tag="Healthy"
               handleClick={handleClick}
               value="Healthy"
@@ -53,7 +57,7 @@ const PopularTag = ({ handleClick }) => {
               handleClick={handleClick}
               value="Breakfast"
             />
-            <TagButton tag="Fruit" handleClick={handleClick} value="Fruit" />
+            <TagButton tag="Fruit" handleClick={handleClick} value="Fruit" /> */}
           </div>
         </div>
       )}

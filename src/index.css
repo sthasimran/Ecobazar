@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* index.css */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu-open {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
+
+
 .slick-slide > div {
     margin: 0 10px;
 }
@@ -52,4 +78,53 @@ display: none;
 }
 .slick-arrow.slick-prev:before {
   content: "";
+}
+
+/* radio button color change to green */
+/* Add this CSS in your CSS file or a styled component */
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="radio"] + span {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+input[type="radio"] + span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  transition: border 0.3s;
+}
+
+input[type="radio"]:checked + span::before {
+  border-color: #00B207; /* Change this to your desired green color */
+  background-color: #00B207; /* Change this to your desired green color */
+}
+
+input[type="radio"]:checked + span::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
 }

@@ -1,11 +1,29 @@
 import React from "react";
-const ProductFilter = ({ result }) => {
-  console.log(result);
+import { useSelector } from "react-redux";
+import Card from "../ShopComponent/Card";
+const ProductFilter = () => {
+  const products = useSelector((state) => state.products.filteredProducts);
+  // console.log(products);
   return (
     <section className="grid grid-cols-3 gap-4">
-      {result.map((item, index) => (
-        <div>{item}</div>
-      ))}
+      {products
+        // .filter((product) => product.tag === tag)
+        .map((product, index) => {
+          return (
+            <div key={index}>
+              <Card
+                key={product.id}
+                img={product.img}
+                title={product.title}
+                price={product.price}
+                initial={product.initial}
+                sale={product.sale}
+                rating={product.rating}
+                outOfStock={product.outOfStock}
+              />
+            </div>
+          );
+        })}
     </section>
   );
 };

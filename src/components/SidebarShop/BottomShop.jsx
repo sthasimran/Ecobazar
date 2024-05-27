@@ -8,25 +8,22 @@ import PopularTag from "../SideShopLeft/PopularTag";
 import PriceRange from "../SideShopLeft/PriceRange";
 import RatingFilter from "../SideShopLeft/RatingFilter";
 import SaleProducts from "../SideShopLeft/SaleProducts";
-const BottomShop = ({handleChange, handleClick, result}) => {
+const BottomShop = () => {
   // console.log(result)
   return (
     <div>
       <div className="w-full  container mx-auto px-28 flex mb-3">
-        
         <div className=" w-1/4 mr-4">
-          <Category handleChange={handleChange} />
-          <PriceRange handleChange={handleChange} />
-          <RatingFilter handleChange={handleChange} />
-          <PopularTag handleClick={handleClick} />
+          <Category />
+          <PriceRange />
+          <RatingFilter />
+          <PopularTag />
           <DiscountCard />
           <SaleProducts />
         </div>
         <div className=" w-3/4 ">
-          <ProductFilter result={result} />
+          <ProductFilter />
         </div>
-        
-        
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { data } from "../../Data/db";
 
-const Card = ({id, img, title, price, initial, sale, rating, outOfStock }) => {
+const Card = ({id, img, title, price, initial, sale, rating, outOfStock,tag }) => {
   const product = data;
   const dispatch = useDispatch();
   

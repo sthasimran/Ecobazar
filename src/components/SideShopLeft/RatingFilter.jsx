@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { AiFillStar } from "react-icons/ai";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import Checkbox from "../ShopComponent/Checkbox";
 
 const RatingFilter = ({ handleChange }) => {
   const [showRating, setShowRating] = useState(true);
@@ -17,17 +17,20 @@ const RatingFilter = ({ handleChange }) => {
       </div>
       {showRating && (
         <div className="">
-          <label className="flex items-center gap-2">
-            <input type="radio" name="rating" className="radio-container" />
+
+
+          <Checkbox/>
+          {/* <label className="flex items-center gap-2">
+            <input type="checkbox" name="rating" className="radio-container" />
             <span className="flex">
               <AiFillStar color="orange" /> <AiFillStar color="orange" />{" "}
               <AiFillStar color="orange" /> <AiFillStar color="orange" />{" "}
               <AiFillStar color="orange" />
             </span>
             <span className="text-[#1A1A1A] ml-1 text-sm font-normal">5.0</span>
-          </label>
+          </label> */}
 
-          <label className="flex items-center gap-2">
+          {/* <label className="flex items-center gap-2">
             <input type="checkbox" name="rating" />
             <span className="flex">
               <AiFillStar color="orange" /> <AiFillStar color="orange" />{" "}
@@ -73,7 +76,7 @@ const RatingFilter = ({ handleChange }) => {
             <span className="text-[#1A1A1A] ml-1 text-sm font-normal">
               1.0 & up
             </span>
-          </label>
+          </label> */}
         </div>
       )}
     </div>

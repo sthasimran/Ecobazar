@@ -6,44 +6,48 @@ export const productSlice = createSlice({
   initialState: {
     filteredProducts:
       JSON.parse(sessionStorage.getItem("filteredData")) || data,
-    singleProduct: JSON.parse(sessionStorage.getItem("singleProduct")) || data,
-    error: false,
   },
   reducers: {
     filterProducts(state, action) {
       try {
-        const filter = data.filter(
-          (product) => product.type === action.payload
-        );
+        const filter = data.filter((product) => product.tag === action.payload);
         state.filteredProducts = filter;
-        state.error = false;
-        const savedState = JSON.stringify(filter);
-        sessionStorage.setItem("filteredData", savedState);
+        // console.log("filter", filter);
+        const saveState = JSON.stringify(filter);
+        sessionStorage.setItem("filteredData", saveState);
       } catch (err) {
         return err;
       }
     },
-    singleProduct(state, action) {
+    sortFilter(state, action) {
       try {
-        const oneProduct = state.filteredProducts.filter(
-          (product) => product.id === action.payload
+        const sortProdFil = data.filter(
+          (product) => product.list === action.payload
         );
-        state.singleProduct = oneProduct;
-        const savedState = JSON.stringify(oneProduct);
-        sessionStorage.setItem("singleProduct", savedState);
-      } catch (err) {
-        return err;
+        state.filteredProducts = sortProdFil;
+        // console.log("filter", sortProdFil);
+        const saveState = JSON.stringify(sortProdFil);
+        sessionStorage.setItem("filteredData", saveState);
+      } catch (error) {
+        return error;
+      }
+    },
+
+    radioFilter(state, action) {
+      try {
+        const radioProdFil = data.filter(
+          (product) => product.category === action.payload
+        );
+        state.filteredProducts = radioProdFil;
+        // console.log("filter", sortProdFil);
+        const saveState = JSON.stringify(radioProdFil);
+        sessionStorage.setItem("filteredData", saveState);
+      } catch (error) {
+        return error;
       }
     },
   },
 });
 
-export const {
-  filterProducts,
-  singleProduct,
-  filterGender,
-  sortByPrice,
-  filterByColor,
-  filterBySize,
-} = productSlice.actions;
+export const { filterProducts, sortFilter, radioFilter } = productSlice.actions;
 export default productSlice.reducer;

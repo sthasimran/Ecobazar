@@ -1,7 +1,13 @@
 import React from 'react'
-
+import { AiFillStar } from 'react-icons/ai'
 const Checkbox = () => {
-  
+  const ratingBox = [
+    ``,
+    ``,
+    ``,
+    ``,
+    ``,
+  ]
   return (
     <div>
         <label className="flex items-center gap-2">

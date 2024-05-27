@@ -38,7 +38,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `Healthy`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 2,
@@ -49,9 +49,9 @@ const data = [
     rating: "4",
     sale: null,
     outOfStock: null,
-    category: `FreshFruit`,
+    category: `Fresh Fruit`,
     tag: `Healthy`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `Healthy`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 4,
@@ -77,7 +77,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 5,
@@ -89,7 +89,7 @@ const data = [
     sale: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Popular`,
+    list: `Popular Products`,
     outOfStock: `outOfStock`,
   },
   {
@@ -103,7 +103,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 7,
@@ -116,7 +116,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 8,
@@ -128,8 +128,8 @@ const data = [
     rating: "5",
     outOfStock: null,
     tag: `LowFat`,
-    list: `Latest`,
-    category: `FreshFruit`,
+    list: `LatestProducts`,
+    category: `Fresh Fruit`,
   },
   {
     id: 9,
@@ -142,7 +142,7 @@ const data = [
     category: `Vegetable`,
     outOfStock: null,
     tag: `LowFat`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 10,
@@ -155,7 +155,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 11,
@@ -168,7 +168,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Featured`,
+    list: `Featured Products`,
   },
   {
     id: 12,
@@ -181,7 +181,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Popular`,
+    list: `Popular Products`,
   },
   {
     id: 13,
@@ -194,7 +194,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `Featured`,
+    list: `Featured Products`,
   },
   {
     id: 14,
@@ -207,7 +207,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `HotDeals`,
+    list: `HotDeals Products`,
   },
   {
     id: 15,
@@ -220,7 +220,7 @@ const data = [
     outOfStock: null,
     category: `Vegetable`,
     tag: `LowFat`,
-    list: `HotDeals`,
+    list: `HotDeals Products`,
   },
   {
     id: 16,
@@ -232,8 +232,8 @@ const data = [
     sale: null,
     outOfStock: null,
     tag: `LowFat`,
-    list: `Featured`,
-    category: `FreshFruit`,
+    list: `Featured Products`,
+    category: `Fresh Fruit`,
   },
 ];
 
