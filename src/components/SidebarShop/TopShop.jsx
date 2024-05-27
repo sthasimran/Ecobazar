@@ -1,8 +1,18 @@
 import React from "react";
 import { LuSettings2 } from "react-icons/lu";
-import DropMenu from "../../components/ShopComponent/DropMenu";
+import { useDispatch, useSelector } from "react-redux";
+import { sortFilter } from "../../features/slices/ProductSlice";
 
-const TopShop = ({ result, handleChange }) => {
+const TopShop = () => {
+  const products = useSelector((state) => state.products.filteredProducts);
+  // console.log(products);
+  const dispatch = useDispatch();
+  const list = [
+    "LatestProducts",
+    "Featured Products",
+    "HotDeals Products",
+    "Popular Products",
+  ];
   return (
     <div>
       <div className=" flex justify-between container mx-auto px-28 w-full items-center py-4">
@@ -18,42 +28,15 @@ const TopShop = ({ result, handleChange }) => {
               Sort by:
             </label>
             <select
-              id="items"
               className="p-1 border rounded-md w-48 text-[#4D4D4D] text-[14px] leading-[21px] font-normal"
-              onChange={handleChange}
+              onChange={() => dispatch(sortFilter(list))}
             >
-              <DropMenu
-                handleChange={handleChange}
-                value="Latest"
-                title="Latest Products"
-              />
-              <DropMenu
-                handleChange={handleChange}
-                value="Popular"
-                title="Popular Products"
-              />
-              <DropMenu
-                handleChange={handleChange}
-                value="HotDeals"
-                title="Hot Deal Products"
-              />
-              <DropMenu
-                handleChange={handleChange}
-                value="Featured"
-                title="Featured Products"
-              />
+              <option className="text-sm font-normal" >{list}</option>
             </select>
-
-            {/* <select id="items" className="p-1 border rounded-md px-5 ">
-              <option value="latest">Latest</option>
-              <option value="popular">Popular</option>
-              <option value="featured">Featured</option>
-              
-            </select> */}
           </div>
         </div>
         <div className="text-sm  w-1/4 text-end font-semibold">
-          {result.length} <span className=" font-light">Results Found</span>{" "}
+          {products.length} <span className=" font-light">Results Found</span>{" "}
         </div>
       </div>
     </div>
