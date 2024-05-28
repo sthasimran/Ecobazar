@@ -23,14 +23,14 @@ function Navbar() {
     <section className="">
       <div className="w-full">
         <div className="border-b border-grey">
-          <div className="flex justify-between mt-5 mb-2 md:mx-auto md:px-28 px-3">
-            <div className="flex items-center gap-2 text-[#4D4D4D]">
+          <div className="flex flex-col md:flex-row justify-between mt-5 mb-2 md:mx-auto md:px-28 px-3">
+            <div className="flex items-center gap-2 text-[#4D4D4D] mb-2 md:mb-0">
               <CiLocationOn size={20} color="grey" />
               Store Location: Lincoln-344, Illinois, Chicago, USA
             </div>
-            <div className="flex gap-7">
-              <div className="flex gap-2 border-r-2 border-grey ">
-                <div className="flex items-center mr-3 gap-2 text-[#4D4D4D]">
+            <div className="flex gap-7 items-center">
+              <div className="flex gap-2 border-r-2 border-grey pr-2">
+                <div className="flex items-center gap-2 text-[#4D4D4D]">
                   ENG <FaAngleDown />
                   USD <FaAngleDown />
                 </div>
@@ -91,8 +91,8 @@ function Navbar() {
               Search
             </button>
           </div>
-          {/* like */}
-          <div className="flex items-center justify-center">
+          {/* like and bag icons */}
+          <div className="hidden md:flex items-center justify-center">
             <div className="flex pr-2 border-r-2 border-grey">
               <GoHeart size={30} />
             </div>
@@ -111,7 +111,7 @@ function Navbar() {
               <p className="text-[14px] leading-[14px] font-medium">$57.0</p>
             </div>
           </div>
-          <div className="mobile-menu-button">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="focus:outline-none"
