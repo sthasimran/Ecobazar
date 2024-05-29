@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import Card from "../ShopComponent/Card";
 const ProductFilter = () => {
   const products = useSelector((state) => state.products.filteredProducts);
-  // console.log(products);
+  // console.log(products)
+
   return (
     <section className="grid grid-cols-3 gap-4">
       {products
@@ -12,7 +13,7 @@ const ProductFilter = () => {
           return (
             <div key={index}>
               <Card
-                key={product.id}
+                id={product.id}
                 img={product.img}
                 title={product.title}
                 price={product.price}

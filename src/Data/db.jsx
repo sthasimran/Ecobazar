@@ -226,7 +226,7 @@ const data = [
     id: 16,
     img: mango,
     title: `Surjapur Mango`,
-    price: "$34.00",
+    price: 34.00,
     initial: null,
     rating: "4",
     sale: null,

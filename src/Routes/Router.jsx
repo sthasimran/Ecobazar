@@ -21,7 +21,7 @@ const Move = createBrowserRouter([
         element: <Shop />,
       },
       {
-        path: "/pages",
+        path: "/pages/:id",
         element: <SingleProduct />,
       },
       {

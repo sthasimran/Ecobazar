@@ -29,9 +29,20 @@ const TopShop = () => {
             </label>
             <select
               className="p-1 border rounded-md w-48 text-[#4D4D4D] text-[14px] leading-[21px] font-normal"
-              onChange={() => dispatch(sortFilter(list))}
+              onChange={(event) => {
+                dispatch(sortFilter(event.target.value));
+              }}
             >
-              <option className="text-sm font-normal" >{list}</option>
+              {list.map((item, index) => {
+                return (
+                  <option
+                    value={item}
+                    className="bg-primary p-2 text-white hover:bg-[#2C742F] rounded-lg transition-all duration-300"
+                  >
+                    {item}
+                  </option>
+                );
+              })}
             </select>
           </div>
         </div>
