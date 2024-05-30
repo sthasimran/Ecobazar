@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GoArrowRight, GoHeart } from "react-icons/go";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoEyeOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from 'react-redux';
 import { data } from "../../Data/Data";
+import { hotDealsProductFun } from "../../features/slices/ProductSlice";
 import CountdownTimer from "../Home/CountdownTimer";
+import Card from "../ShopComponent/Card";
 
 function HotDeals() {
   const targetDate = new Date("2024-07-10T00:00:00");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(hotDealsProductFun(true));
+  }, [dispatch]);
+
+  const products = useSelector((state) => state.products.hotDealsProductList);
+  console.log(products)
   return (
     <section className="mt-5 mb-2 md:mx-auto md:px-28 px-3">
       <div>
@@ -86,46 +97,18 @@ function HotDeals() {
             </div>
           ))}
 
-          {data.hotDealsAll.map((item, index) => (
+          {products.map((item, index) => (
             <div className="col-span-2">
-              <div
-                key={index}
-                className=" flex flex-col items-center relative  "
-              >
-                <div className=" border hover:border-[#20B526] hover:shadow-md p-2 ">
-                  <img src={item.img} alt="" className="h-[200px] " />
-                  <div className="ml-5">
-                    <p className="text-gray-500">{item.title}</p>
-                    <div className="flex gap-2">
-                      <p>{item.price}</p>
-                      <p className="text line-through">{item.initial}</p>
-                    </div>
-
-                    {/* <p className="">{item.rating}</p> */}
-
-                    <div className="flex items-center">
-                      <span className="text-[#FFA500] text-[24px] ">
-                        {"★".repeat(Math.round(item.rating))}
-                      </span>
-                      <span className="text-gray-400 text-[24px]">
-                        {"★".repeat(5 - Math.round(item.rating))}
-                      </span>
-                    </div>
-                  </div>
-                  {item.sale ? (
-                    <span className="absolute bg-[#EA4B48] text-white text-[14px] px-[8px] py-[8px] rounded-md top-[16px] left-[16px]">
-                      Sale 50%
-                    </span>
-                  ) : (
-                    <></>
-                  )}
-                </div>
-                <div className="absolute top-24 right-4 flex flex-col justify-between">
-                  <div className="mt-28 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white group-hover/edit:bg-slate-400">
-                    <HiOutlineShoppingBag className="" />
-                  </div>
-                </div>
-              </div>
+               <Card
+            id={item.id}
+            img={item.img}
+            title={ item.title}
+            price={item.price}
+            initial={item.initial}
+            rating={item.rating}
+            sale={item.sale}
+            outOfStock={item.outOfStock}
+            />
             </div>
           ))}
         </div>

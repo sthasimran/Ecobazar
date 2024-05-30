@@ -4,12 +4,17 @@ import { FaAngleDown, FaBars, FaTimes } from "react-icons/fa";
 import { GoHeart } from "react-icons/go";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { LuPhoneCall } from "react-icons/lu";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import plant from "../../assets/image/plant.jpg";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const totalPrice = useSelector((state) => state.cart.totalPrice );
 
+
+const dispatch = useDispatch();
   const navItems = [
     { link: "Home", path: "/" },
     { link: "Shop", path: "/shop" },
@@ -96,19 +101,20 @@ function Navbar() {
             <div className="flex pr-2 border-r-2 border-grey">
               <GoHeart size={30} />
             </div>
-            <div className="relative w-7 h-7 ml-2">
+            <div className="relative w-7 h-7 ml-2 cursor-pointer" >
               <NavLink to="/cart">
                 <HiOutlineShoppingBag size={30} />
               </NavLink>
-              <div className="absolute top-[1px] right-[-2px] bg-primary w-4 h-4 rounded-full flex justify-center items-center text-[10px] text-white">
-                2
-              </div>
+              {totalQuantity > 0 ? <div className="absolute top-[1px] right-[-5px] bg-primary w-[18px] h-[18px] rounded-full flex justify-center items-center text-[8px] text-white">
+                {totalQuantity}
+              </div> : <></>}
+              
             </div>
             <div className="text-left ml-2">
               <p className="text-[12px] leading-[13.2px] font-normal text-[#4D4D4D]">
                 Shopping Cart
               </p>
-              <p className="text-[14px] leading-[14px] font-medium">$57.0</p>
+              <p className="text-[14px] leading-[14px] font-medium">${totalPrice}</p>
             </div>
           </div>
           <div className="md:hidden flex items-center">
