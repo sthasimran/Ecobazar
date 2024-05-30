@@ -55,62 +55,87 @@ const data = [
 function ClientTestimonials() {
   const [slider, setSlider] = useState(null);
 
-
   var settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // for tablets and up
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600, // for mobile devices
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
     <section className="md:mx-auto md:px-28 px-3 mt-3 bg-[#F2F2F2] py-[60px]">
       <div className="flex justify-between items-center">
         <div className="text-xl font-medium">Client Testimonials</div>
 
-        <div className="slider-buttons items-center justify-center">
-          {/* Slider buttons */}
-          <button onClick={() => slider && slider.slickPrev()} class><div className='h-[35px] w-[35px] rounded-full flex items-center justify-center  bg-white hover:bg-primary hover:text-white'><FaArrowLeftLong size={20} /></div></button> {/* Added check for slider reference */}
-          <button onClick={() => slider && slider.slickNext()} class><div className='h-[35px] w-[35px] rounded-full flex items-center justify-center  bg-white hover:bg-primary hover:text-white'><FaArrowRightLong size={20} /></div></button> {/* Added check for slider reference */}
+        <div className="slider-buttons items-center justify-center flex gap-2">
+          <button onClick={() => slider && slider.slickPrev()}>
+            <div className="h-[35px] w-[35px] rounded-full flex items-center justify-center bg-white hover:bg-primary hover:text-white">
+              <FaArrowLeftLong size={20} />
+            </div>
+          </button>
+          <button onClick={() => slider && slider.slickNext()}>
+            <div className="h-[35px] w-[35px] rounded-full flex items-center justify-center bg-white hover:bg-primary hover:text-white">
+              <FaArrowRightLong size={20} />
+            </div>
+          </button>
         </div>
       </div>
       <div className="slider-container gap-5 mt-3">
-        <Slider {...settings} ref={slider => setSlider(slider)}> {/* Set slider reference */}
+        <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {data.map((item, index) => (
-            <div className='border-[1px] p-4 bg-white' key={index}> {/* Added key */}
-              <div><img src={quote} className='w-[32px] h-[26px]'></img> </div>
+            <div className="border-[1px] p-4 bg-white" key={index}>
+              <div>
+                <img src={quote} className="w-[32px] h-[26px]" alt="quote" />
+              </div>
               <div>{item.review}</div>
-              <div className='flex justify-between'>
-                <div className='flex gap-2'>
-                  <div><img src={item.img} className='w-[56px] h-[56px] rounded-full'></img> </div>
-                  <div><p>{item.name}</p>
-                    <p>{item.type}</p></div>
+              <div className="flex justify-between mt-4">
+                <div className="flex gap-2">
+                  <div>
+                    <img
+                      src={item.img}
+                      className="w-[56px] h-[56px] rounded-full"
+                      alt={item.name}
+                    />
+                  </div>
+                  <div>
+                    <p>{item.name}</p>
+                    <p>{item.type}</p>
+                  </div>
                 </div>
-                <div className=''><Rating className="">
-                  <Rating.Star fill="orange" fontSize={20} />
-                  <Rating.Star fill="orange" fontSize={20} />
-                  <Rating.Star fill="orange" fontSize={20} />
-                  <Rating.Star fill="orange" fontSize={20} />
-                  <Rating.Star fill="orange" fontSize={20} />
-                </Rating> </div>
+                <div>
+                  <Rating className="">
+                    <Rating.Star fill="orange" fontSize={20} />
+                    <Rating.Star fill="orange" fontSize={20} />
+                    <Rating.Star fill="orange" fontSize={20} />
+                    <Rating.Star fill="orange" fontSize={20} />
+                    <Rating.Star fill="orange" fontSize={20} />
+                  </Rating>
+                </div>
               </div>
             </div>
           ))}
         </Slider>
-        {/* <div className="flex items-center gap-2 text-primary">
-          <div className="rounded-full bg-white w-8 h-8 flex items-center justify-center">
-            <FaArrowLeftLong className=" rounded-full " />
-          </div>
-          <div>
-            <FaArrowRightLong />
-          </div>
-        </div> */}
       </div>
-      {/* <div>
-        <SimpleSlider />
-      </div> */}
     </section>
   );
 }
+
 export { data };
 export default ClientTestimonials;

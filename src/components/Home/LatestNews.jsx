@@ -38,39 +38,36 @@ const data = [
 function LatestNews() {
   return (
     <section className="md:mx-auto md:px-28 px-3 mt-10">
-      <div className="flex items-center justify-center  font-semibold text-xl leading-[38.4px] ">
+      <div className="flex items-center justify-center font-semibold text-xl leading-[38.4px]">
         Latest News
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-2 ">
         {data.map((item, index) => (
-          <div>
+          <div key={index}>
             <div className="h-[275px] rounded-md relative">
               <img src={item.img} alt="" />
-              <div className="flex flex-col w-[60px] h-[60px] bg-white absolute bottom-3 opacity-80 left-3 items-center justify-center rounded">
-                <p>{item.day}</p>
-                <p>Jan</p>
+              <div className="flex flex-col w-[40px] sm:w-[60px] h-[40px] sm:h-[60px] bg-white absolute bottom-3 left-3 items-center justify-center rounded">
+                <p className="text-xs sm:text-base">{item.day}</p>
+                <p className="text-xs sm:text-base">{item.month}</p>
               </div>
             </div>
-            <div className="border px-4 shadow-md ">
-              <div className="flex gap-5 mt-4 leading-9">
-                <div className="flex items-center gap-1">
+            <div className="border px-4 shadow-md">
+              <div className=" gap-5 mt-4 leading-9 news-content hidden md:flex">
+                <div className="flex items-center gap-1 ">
                   <GoTag />
-                  Food
+                  {item.category}
                 </div>
                 <div className="flex items-center gap-1">
                   <FaRegUser />
-                  By Admin
+                  {item.type}
                 </div>
                 <div className="flex items-center gap-1">
                   <FaRegCommentAlt />
-                  65 comments
+                  {item.comments}
                 </div>
               </div>
-              <p className="text-green-800 leading-6">
-                Curabitur porttitor orci eget neque accumsan venenatis. Nunc
-                fermentum.
-              </p>
-              <div className="flex items-center gap-2  text-primary py-2">
+              <p className="text-green-800 leading-6">{item.title}</p>
+              <div className="flex items-center gap-2 text-primary py-2">
                 <button className="">Read More </button>
                 <GoArrowRight />
               </div>

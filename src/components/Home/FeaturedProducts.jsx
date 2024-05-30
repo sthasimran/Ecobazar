@@ -3,6 +3,7 @@ import { GoArrowRight } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { featureProductFun } from "../../features/slices/ProductSlice";
 import Card from "../ShopComponent/Card";
+
 function FeaturedProducts() {
   const dispatch = useDispatch();
 
@@ -11,18 +12,20 @@ function FeaturedProducts() {
   }, [dispatch]);
 
   const products = useSelector((state) => state.products.featureProductList);
+
   return (
     <section className="md:mx-auto md:px-28 px-3 mt-3">
       <div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div className="text-xl font-medium">Featured Products</div>
           <div className="flex items-center gap-2 text-primary">
             View All <GoArrowRight />
           </div>
         </div>
-        <div className="m-auto grid grid-cols-5 mt-4">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {products.map((item, index) => (
             <Card
+              key={index} 
               id={item.id}
               img={item.img}
               title={item.title}

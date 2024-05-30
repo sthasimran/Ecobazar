@@ -30,7 +30,7 @@ function HotDeals() {
 
         <div className="grid grid-cols-10">
           {data.hotDealsOffer.map((item, index) => (
-            <div className="row-span-2 col-span-4 ">
+            <div className="row-span-2 col-span-4 h-full ">
               <div
                 key={index}
                 className=" relative flex flex-col items-center  "
@@ -55,7 +55,7 @@ function HotDeals() {
                     <p className="text-[#2C742F]">{item.title}</p>
                     <div className="flex gap-2">
                       <p>{item.price}</p>
-                      <p className="text line-through">{item.initial}</p>
+                      <p className="text line-through text-gray-500">{item.initial}</p>
                     </div>
 
                     <div className="flex gap-2">
@@ -98,7 +98,7 @@ function HotDeals() {
           ))}
 
           {products.map((item, index) => (
-            <div className="col-span-2">
+            <div className="col-span-2 h-full" >
                <Card
             id={item.id}
             img={item.img}
