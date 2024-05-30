@@ -39,7 +39,7 @@ const Card = ({
               <div className="ml-2">
                 <p className="text-gray-500">{title}</p>
                 <div className="flex gap-2">
-                  <p>{price}</p>
+                  <p>${price}</p>
                   <p className="text line-through text-gray-500">{initial}</p>
                 </div>
                 <div className="">
