@@ -11,10 +11,9 @@ import plant from "../../assets/image/plant.jpg";
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
-  const totalPrice = useSelector((state) => state.cart.totalPrice );
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
 
-
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navItems = [
     { link: "Home", path: "/" },
     { link: "Shop", path: "/shop" },
@@ -101,20 +100,30 @@ const dispatch = useDispatch();
             <div className="flex pr-2 border-r-2 border-grey">
               <GoHeart size={30} />
             </div>
-            <div className="relative w-7 h-7 ml-2 cursor-pointer" >
-              <NavLink to="/cart">
+            <div className="relative w-7 h-7 ml-2 cursor-pointer">
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  isActive ? "text-green-500" : "text-black"
+                }
+              >
                 <HiOutlineShoppingBag size={30} />
               </NavLink>
-              {totalQuantity > 0 ? <div className="absolute top-[1px] right-[-5px] bg-primary w-[18px] h-[18px] rounded-full flex justify-center items-center text-[8px] text-white">
-                {totalQuantity}
-              </div> : <></>}
-              
+              {totalQuantity > 0 ? (
+                <div className="absolute top-[1px] right-[-5px] bg-primary w-[18px] h-[18px] rounded-full flex justify-center items-center text-[8px] text-white">
+                  {totalQuantity}
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="text-left ml-2">
               <p className="text-[12px] leading-[13.2px] font-normal text-[#4D4D4D]">
                 Shopping Cart
               </p>
-              <p className="text-[14px] leading-[14px] font-medium">${totalPrice}</p>
+              <p className="text-[14px] leading-[14px] font-medium">
+                ${totalPrice}
+              </p>
             </div>
           </div>
           <div className="md:hidden flex items-center">

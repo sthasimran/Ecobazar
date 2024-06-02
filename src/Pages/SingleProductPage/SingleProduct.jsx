@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaInstagram, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { GoHeart } from "react-icons/go";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import brand from "../../assets/image/brand.png";
 import Counter from "../../components/Counter";
-import { addToCart, updateQuantity } from "../../features/slices/CartSlice";
+import { addToCart } from "../../features/slices/CartSlice";
 import Description from "./Description";
 import RelatedProducts from "./RelatedProducts";
 
@@ -21,14 +21,29 @@ const SingleProduct = () => {
     state.cart.cart.find((item) => item.id === parseInt(id))
   );
 
+  const [counter, setCounter] = useState(cartItem ? cartItem.quantity : 1);
+
   const handleIncrement = () => {
-    dispatch(updateQuantity({ id: parseInt(id), quantity: cartItem.quantity + 1 }));
+    setCounter(counter + 1);
   };
 
   const handleDecrement = () => {
-    if (cartItem.quantity > 1) {
-      dispatch(updateQuantity({ id: parseInt(id), quantity: cartItem.quantity - 1 }));
+    if (counter > 1) {
+      setCounter(counter - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: product.id,
+        img: product.img,
+        title: product.title,
+        price: product.price,
+        quantity: counter,
+        totalPrice: product.price * counter,
+      })
+    );
   };
 
   if (!product) {
@@ -129,24 +144,13 @@ const SingleProduct = () => {
           <div className="border-b pb-4 mb-4">
             <div className="flex items-center justify-between gap-3 my-5">
               <Counter
-                count={cartItem ? cartItem.quantity : 0}
+                count={counter}
                 onIncrement={handleIncrement}
                 onDecrement={handleDecrement}
               />
               <div
                 className="bg-[#00B207] rounded-full h-[45px] w-[350px] text-white flex items-center justify-center gap-3 hover:bg-[#2C742F] duration-150"
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      id: product.id,
-                      img: product.img,
-                      title: product.title,
-                      price: product.price,
-                      quantity: 1,
-                      totalPrice: product.price,
-                    })
-                  )
-                }
+                onClick={handleAddToCart}
               >
                 <p>Add to Cart</p>
                 <HiOutlineShoppingBag size={18} />

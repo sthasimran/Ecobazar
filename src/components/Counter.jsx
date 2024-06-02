@@ -1,6 +1,6 @@
 import React from "react";
 
-const IncrementDecrementBtn = ({ count, onIncrement, onDecrement, minValue = 0, maxValue = 100 }) => {
+const Counter = ({ count, onIncrement, onDecrement, minValue = 0, maxValue = 100 }) => {
   const handleIncrementCounter = () => {
     if (count < maxValue) {
       onIncrement();
@@ -26,4 +26,4 @@ const IncrementDecrementBtn = ({ count, onIncrement, onDecrement, minValue = 0, 
   );
 };
 
-export default IncrementDecrementBtn;
+export default Counter;

@@ -1,12 +1,11 @@
-import React from 'react'
-import { FaAngleRight } from 'react-icons/fa'
-import { GoHome } from 'react-icons/go'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { FaAngleRight } from "react-icons/fa";
+import { GoHome } from "react-icons/go";
+import { NavLink } from "react-router-dom";
 const Breadcrumbs = () => {
-
   return (
     <div>
-          <div>
+      <div>
         <div className="md:mx-auto md:px-28 px-3  h-[100px] w-full bg-[url('./assets/image/bg-sign.jpg')] bg-cover flex items-center justify-start">
           <div>
             <GoHome color="grey" size={25} />
@@ -27,13 +26,9 @@ const Breadcrumbs = () => {
             <a className="">Vegetable</a>
           </NavLink>
         </div>
-        
-
-
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Breadcrumbs
+export default Breadcrumbs;

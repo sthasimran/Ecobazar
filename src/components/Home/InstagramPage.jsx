@@ -7,7 +7,7 @@ import insta5 from "../../assets/image/Instagram5.png";
 
 function InstagramPage() {
   return (
-    <section className="md:mx-auto md:px-28 px-3 mt-10">
+    <section className="md:mx-auto md:px-28 px-3 mt-10 mb-5">
       <div className="flex items-center justify-center font-semibold text-xl leading-[38.4px] mb-4">
         Follow us on Instagram
       </div>

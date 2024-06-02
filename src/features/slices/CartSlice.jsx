@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
@@ -13,21 +14,21 @@ export const cartSlice = createSlice({
       try {
         const exist = state.cart.find((product) => product.id === productId.id);
         if (exist) {
-          exist.quantity++;
-          exist.totalPrice += productId.price;
-          state.totalQuantity++;
-          state.totalPrice += productId.price;
+          exist.quantity += productId.quantity;
+          exist.totalPrice += productId.price * productId.quantity;
+          state.totalQuantity += productId.quantity;
+          state.totalPrice += productId.price * productId.quantity;
         } else {
           state.cart.push({
             id: productId.id,
             price: productId.price,
-            quantity: 1,
-            totalPrice: productId.price,
+            quantity: productId.quantity,
+            totalPrice: productId.price * productId.quantity,
             title: productId.title,
             img: productId.img,
           });
-          state.totalQuantity++;
-          state.totalPrice += productId.price;
+          state.totalQuantity += productId.quantity;
+          state.totalPrice += productId.price * productId.quantity;
         }
       } catch (error) {
         return error;
@@ -40,9 +41,7 @@ export const cartSlice = createSlice({
 
         if (exist.quantity === 1) {
           state.cart = state.cart.filter(
-            (product) =>
-              product.id !== productId.id 
-             
+            (product) => product.id !== productId.id
           );
           state.totalQuantity--;
           state.totalPrice -= productId.price;
@@ -56,29 +55,14 @@ export const cartSlice = createSlice({
         return error;
       }
     },
-    updateQuantity(state, action) {
-      const { id, quantity } = action.payload;
-      try {
-        const item = state.cart.find((product) => product.id === id);
-        if (item) {
-          // Calculate the difference in quantity
-          const quantityDifference = quantity - item.quantity;
-          
-          // Update the item quantity
-          item.quantity = quantity;
-          
-          // Update the item total price
-          item.totalPrice = item.price * quantity;
-          
-          // Update the total quantity and total price
-          state.totalQuantity += quantityDifference;
-          state.totalPrice += quantityDifference * item.price;
-        }
-      } catch (error) {
-        return error;
-      }
+    updateCart(state, action) {
+      const updatedCart = action.payload;
+      state.cart = updatedCart;
+      state.totalQuantity = updatedCart.reduce((sum, item) => sum + item.quantity, 0);
+      state.totalPrice = updatedCart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     },
   },
 });
-export const { addToCart, removeFromCart, updateQuantity } = cartSlice.actions;
+
+export const { addToCart, removeFromCart, updateCart } = cartSlice.actions;
 export default cartSlice.reducer;

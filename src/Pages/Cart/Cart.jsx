@@ -1,27 +1,54 @@
 import { Button } from "flowbite-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Coupon from "../../Pages/Cart/Coupon";
 import Counter from "../../components/Counter";
 import Breadcrumbs from "../../components/SidebarShop/Breadcrums";
-import { removeFromCart, updateQuantity } from "../../features/slices/CartSlice";
+import { removeFromCart, updateCart } from "../../features/slices/CartSlice";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
-
   const dispatch = useDispatch();
 
-  const handleIncrement = (item) => {
-    dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }));
+  // Local state to keep track of quantity changes
+  const [localCart, setLocalCart] = useState(cart);
+
+  // Sync local cart with redux cart
+  useEffect(() => {
+    setLocalCart(cart);
+  }, [cart]);
+
+  const handleIncrement = (index) => {
+    const newCart = [...localCart];
+    newCart[index] = {
+      ...newCart[index],
+      quantity: newCart[index].quantity + 1,
+      totalPrice: newCart[index].price * (newCart[index].quantity + 1),
+    };
+    setLocalCart(newCart);
   };
 
-  const handleDecrement = (item) => {
-    if (item.quantity > 1) {
-      dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }));
+  const handleDecrement = (index) => {
+    const newCart = [...localCart];
+    if (newCart[index].quantity > 1) {
+      newCart[index] = {
+        ...newCart[index],
+        quantity: newCart[index].quantity - 1,
+        totalPrice: newCart[index].price * (newCart[index].quantity - 1),
+      };
+      setLocalCart(newCart);
     }
+  };
+
+  const handleRemoveFromCart = (item) => {
+    dispatch(removeFromCart(item));
+  };
+
+  const handleUpdateCart = () => {
+    dispatch(updateCart(localCart));
   };
 
   return (
@@ -58,7 +85,7 @@ const Cart = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y border-b">
-                      {cart.map((item, index) => {
+                      {localCart.map((item, index) => {
                         const subTotal = item.price * item.quantity;
                         return (
                           <tr className="bg-white" key={index}>
@@ -80,15 +107,19 @@ const Cart = () => {
                             <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
                               <Counter
                                 count={item.quantity}
-                                onIncrement={() => handleIncrement(item)}
-                                onDecrement={() => handleDecrement(item)}
+                                onIncrement={() => handleIncrement(index)}
+                                onDecrement={() => handleDecrement(index)}
                               />
                             </td>
                             <td className="p-3 text-[#1A1A1A] text-base font-normal whitespace-nowrap">
                               ${subTotal}
                             </td>
                             <td className="p-3">
-                              <TiDeleteOutline size={25} color="#666666" onClick={() => dispatch(removeFromCart(item))} />
+                              <TiDeleteOutline
+                                size={25}
+                                color="#666666"
+                                onClick={() => handleRemoveFromCart(item)}
+                              />
                             </td>
                           </tr>
                         );
@@ -96,13 +127,16 @@ const Cart = () => {
                     </tbody>
                   </table>
                 </div>
-                <div className="flex flex-col md:flex-row items-center justify-between my-3 p-2 border">
+                <div className="flex flex-col md:flex-row items-center justify-between  p-2 border">
                   <NavLink to="/shop">
                     <div className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D] cursor-pointer mb-2 md:mb-0">
                       Return to shop
                     </div>
                   </NavLink>
-                  <div className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D] cursor-pointer">
+                  <div
+                    className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D] cursor-pointer"
+                    onClick={handleUpdateCart}
+                  >
                     Update Cart
                   </div>
                 </div>
@@ -177,9 +211,7 @@ const Cart = () => {
             <p className="text-xl font-semibold text-gray-700 mb-2">
               Your cart is empty!
             </p>
-            <p className="text-gray-500 mb-4">
-              Add some items to get started.
-            </p>
+            <p className="text-gray-500 mb-4">Add some items to get started.</p>
             <NavLink to="/shop">
               <button className="px-4 py-2 bg-primary text-white rounded-lg shadow hover:bg-green-600 transition duration-300">
                 Shop Now

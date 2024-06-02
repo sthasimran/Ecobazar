@@ -1,10 +1,21 @@
-import { React } from "react";
+import { React, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import BottomShop from "../components/SidebarShop/BottomShop";
 import Breadcrums from "../components/SidebarShop/Breadcrums";
 import PaginationComponent from "../components/SidebarShop/PaginationComponent";
 import TopShop from "../components/SidebarShop/TopShop";
+import { resetFilters } from "../features/slices/ProductSlice";
 
 const Shop = () => {
+
+  const dispatch = useDispatch();
+  const filteredProducts = useSelector((state) => state.products.filteredProducts);
+
+  useEffect(() => {
+    // Dispatch the resetFilters action when the component mounts
+    dispatch(resetFilters());
+  }, [dispatch]);
+
   // const products = data;
 
   // const [selectedCategory, setSelectedCategory] = useState(null);
@@ -73,7 +84,7 @@ const Shop = () => {
       <Breadcrums />
       <TopShop />
       <BottomShop />
-      <PaginationComponent className="text-center" />
+      <PaginationComponent/>
     </div>
   );
 };
