@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 
 function Banner() {
   return (
-    <section className="container mx-auto md:px-28 px-3 mt-3">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="gridone flex items-center md:col-span-2 row-span-2 h-[400px] md:h-[600px] bg-[url('./assets/image/bannar.jpg')] bg-cover rounded-md">
-          <div className="gap-5 p-6 md:p-10">
+    <section className="lg:mx-auto lg:px-28 md:px-10 px-3 mt-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="gridone flex items-center md:col-span-2  row-span-2 h-[400px] md:h-[600px] bg-[url('./assets/image/bannar.jpg')] bg-cover rounded-md">
+          <div className="gap-5 p-8 md:p-10">
             <p className="text-2xl md:text-[48px] md:w-[580px] font-semibold text-white leading-[32px] md:leading-[57px]">
               Fresh & Healthy Organic Food
             </p>
@@ -30,7 +30,7 @@ function Banner() {
             </NavLink>
           </div>
         </div>
-        <div className="relative row-span-1 h-[200px] md:h-[288px] bg-[url('./assets/image/BgFruit.png')] bg-cover rounded-md">
+        <div className="relative lg:row-span-1 col-span-1 h-[200px] md:h-[288px] bg-[url('./assets/image/BgFruit.png')] bg-cover rounded-md">
           <div className="absolute top-4 left-4 md:top-[32px] md:left-[32px] gap-2 md:gap-5">
             <p className="text-[#1A1A1A] text-[12px] md:text-[14px]">SUMMER SALE</p>
             <p className="text-[24px] md:text-[32px] font-semibold">75% OFF</p>
@@ -43,10 +43,10 @@ function Banner() {
             </div>
           </div>
         </div>
-        <div className="row-span-1 flex items-center justify-center h-[200px] md:h-[288px] bg-[url('./assets/image/BgGreen.png')] bg-cover rounded-md">
+        <div className="lg:row-span-1 col-span-1 flex items-center justify-center h-[200px] md:h-[288px] bg-[url('./assets/image/BgGreen.png')] bg-cover rounded-md">
           <div className="flex flex-col items-center gap-2 text-white">
             <p className="text-[12px] md:text-[14px] text-center leading-3 mb-3">Best Deal</p>
-            <p className="text-[24px] md:text-[32px] text-center leading-[30px] md:leading-[38px] font-bold w-[280px] md:w-[343px] h-[76px]">
+            <p className="text-[24px] lg:text-[32px]  text-center leading-[30px] md:leading-[38px] font-bold w-[280px] lg:w-[343px] h-[76px]">
               Special Products Deal of the Month
             </p>
             <div className="flex place-content-center mt-2">

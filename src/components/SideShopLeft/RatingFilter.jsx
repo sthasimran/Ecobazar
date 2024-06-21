@@ -8,9 +8,9 @@ const RatingFilter = ({ handleChange }) => {
     setShowRating(!showRating);
   };
   return (
-    <div className="border-b">
+    <div className="border-b mt-4">
       <div className="flex items-center justify-between " onClick={handleClick}>
-        <h2 className="text-xl font-medium text-[#1A1A1A] cursor-pointer">
+        <h2 className="md:text-base lg:text-xl font-medium text-[#1A1A1A] cursor-pointer">
           Rating
         </h2>
         {showRating ? <FaAngleUp /> : <FaAngleDown />}
@@ -66,7 +66,7 @@ const RatingFilter = ({ handleChange }) => {
             </span>
           </label>
 
-          <label className="flex items-center gap-2">
+          <label className="flex items-center gap-2 mb-4">
             <input type="checkbox" name="rating" />
             <span className="flex">
               <AiFillStar color="orange" /> <AiFillStar color="grey" />{" "}

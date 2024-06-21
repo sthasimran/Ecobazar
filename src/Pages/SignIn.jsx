@@ -10,7 +10,7 @@ const SignIn = () => {
   return (
     <section className=" bg-slate-100 ">
     
-      <div className="md:mx-auto md:px-28  h-[100px] w-full bg-[url('./assets/image/bg-sign.jpg')] bg-cover flex items-center justify-start">
+      <div className="lg:mx-auto lg:px-28 md:px-10  h-[100px] w-full bg-[url('./assets/image/bg-sign.jpg')] bg-cover flex items-center justify-start">
         <div>
           <GoHome color="grey" size={25} />
         </div>

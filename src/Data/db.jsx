@@ -128,6 +128,7 @@ const data = [
     tag: `LowFat`,
     list: `Popular Products`,
     popularProduct: true,
+    hotDealsProduct: true,
   },
   {
     id: 8,
@@ -141,7 +142,6 @@ const data = [
     tag: `LowFat`,
     list: `LatestProducts`,
     category: `Fresh Fruit`,
-    hotDealsProduct: true,
   },
   {
     id: 9,

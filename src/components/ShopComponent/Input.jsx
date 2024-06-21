@@ -26,7 +26,7 @@ const Input = () => {
               onChange={() => dispatch(radioFilter(item))}
               value={item}
             />
-            <span className="ml-2 text-sm font-normal text-[#1A1A1A]">
+            <span className=" md:ml-2 text-[8px] md:text-xs lg:text-sm font-normal text-[#1A1A1A]">
               {item}
             </span>
             {/* <span className="text-gray-500 ml-2 text-sm font-normal">

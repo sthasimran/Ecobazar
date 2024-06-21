@@ -26,15 +26,108 @@ function Navbar() {
   return (
     <section className="">
       <div className="w-full">
-        <div className="border-b border-grey">
-          <div className="flex flex-col md:flex-row justify-between mt-5 mb-2 md:mx-auto md:px-28 px-3">
+        <div className="navMobile z-40 fixed top-0 h-16 right-0 left-0 flex items-center justify-between bg-white shadow-md p-3 lg:hidden md:hidden">
+          <div className="text-center md:hidden">
+            <a className="h-8 w-8 text-2xl font-semibold flex items-center space-x-3">
+              <img src={plant} alt="Ecobazar Logo" />
+              <NavLink to="/">
+                <span>Ecobazar</span>
+              </NavLink>
+            </a>
+          </div>
+          <div className="cartMenu flex items-center gap-2">
+            <div className="cartBag">
+              <div className="relative w-7 h-7 ml-2 cursor-pointer">
+                <NavLink
+                  to="/cart"
+                  className={({ isActive }) =>
+                    isActive ? "text-green-500" : "text-black"
+                  }
+                >
+                  <HiOutlineShoppingBag size={25} />
+                </NavLink>
+                {totalQuantity > 0 ? (
+                  <div className="absolute top-[1px] right-[-5px] bg-primary w-[18px] h-[18px] rounded-full flex justify-center items-center text-[8px] text-white">
+                    {totalQuantity}
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+            </div>
+            <div className="lg:hidden  flex items-center">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="focus:outline-none"
+              >
+                {isMobileMenuOpen ? (
+                  <FaTimes size={24} />
+                ) : (
+                  <FaBars size={24} />
+                )}
+              </button>
+            </div>
+            <div
+              className={`mobile-menu ${
+                isMobileMenuOpen ? "mobile-menu-open" : ""
+              } bg-[#333333] text-white absolute top-full left-0 right-0 transition-transform transform ${
+                isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+              }`}
+            >
+              <ul className="flex flex-col items-center space-y-5 py-5">
+                {navItems.map((value, index) => (
+                  <li key={index}>
+                    <NavLink
+                      to={value.path}
+                      className={({ isActive }) =>
+                        isActive ? "text-green-500" : "text-white"
+                      }
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {value.link}
+                    </NavLink>
+                  </li>
+                ))}
+                <div>
+                  <ul className="flex items-center gap-2 lg:text-[#4D4D4D] text-white">
+                    <NavLink
+                      to="/signin"
+                      className={({ isActive }) =>
+                        isActive ? "text-primary" : "lg:text-[#4D4D4D]"
+                      }
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <a className="md:text-sm lg:text-base">Sign In</a>
+                    </NavLink>
+                    <div>/</div>
+                    <NavLink
+                      to="/signup"
+                      className={({ isActive }) =>
+                        isActive ? "text-primary" : "lg:text-[#4D4D4D] text-white"
+                      }
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <a className="md:text-sm lg:text-base text-">Sign Up</a>
+                    </NavLink>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+{/* other screen */}
+        <div className="border-b border-grey hidden md:block lg:block store-div">
+          <div className="flex  lg:flex-row justify-between mt-3 mb-2 lg:mx-auto lg:px-28 md:px-10 ">
             <div className="flex items-center gap-2 text-[#4D4D4D] mb-2 md:mb-0">
               <CiLocationOn size={20} color="grey" />
-              Store Location: Lincoln-344, Illinois, Chicago, USA
+              <p className=" md:text-xs lg:text-base">
+                Store Location: Lincoln-344, Illinois, Chicago, USA
+              </p>
             </div>
             <div className="flex gap-7 items-center">
-              <div className="flex gap-2 border-r-2 border-grey pr-2">
-                <div className="flex items-center gap-2 text-[#4D4D4D]">
+              <div className="md:hidden lg:flex gap-2 border-r-2 border-grey pr-2">
+                <div className="flex items-center gap-2 text-[#4D4D4D]  lg:text-base">
                   ENG <FaAngleDown />
                   USD <FaAngleDown />
                 </div>
@@ -47,7 +140,7 @@ function Navbar() {
                       isActive ? "text-primary" : "text-[#4D4D4D]"
                     }
                   >
-                    <a>Sign In</a>
+                    <a className="md:text-sm lg:text-base">Sign In</a>
                   </NavLink>
                   <div>/</div>
                   <NavLink
@@ -56,17 +149,17 @@ function Navbar() {
                       isActive ? "text-primary" : "text-[#4D4D4D]"
                     }
                   >
-                    <a>Sign Up</a>
+                    <a className="md:text-sm lg:text-base text-">Sign Up</a>
                   </NavLink>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between text-center mt-5 mb-2 md:mx-auto md:px-28 px-3">
+        <div className=" flex items-center justify-between text-center mt-0 md:mt-4 mb-2 lg:mx-auto lg:px-28 md:px-10 ">
           {/* logo */}
-          <div className="text-center">
-            <a className="h-8 w-8 text-2xl font-semibold flex items-center space-x-3">
+          <div className="text-center hidden lg:block md:block">
+            <a className="lg:h-8 lg:w-8 md:h-6 md:w-6 lg:text-2xl md:text-xl font-semibold flex items-center space-x-3">
               <img src={plant} alt="Ecobazar Logo" />
               <NavLink to="/">
                 <span>Ecobazar</span>
@@ -76,10 +169,10 @@ function Navbar() {
           {/* search */}
           <div className="md:flex hidden">
             <div
-              className="flex py-[12px] pr-[18px] pl-[16px] w-[400px] h-[45px] border-solid border-2
+              className="flex lg:py-[12px] lg:pr-[18px] lg:pl-[16px] md:pl-[10px] lg:w-[400px] lg:h-[45px] md:w-[200px] md:h-[40px] md:ml-24 border-solid border-2
             rounded-l-lg border-grey border-r-0"
             >
-              <div className="flex items-center ">
+              <div className="flex items-center  ">
                 <CiSearch size={20} color="black" />
                 <input
                   type="text"
@@ -90,7 +183,7 @@ function Navbar() {
             </div>
             <button
               className="bg-primary rounded-r-lg border-primary text-white text-[14px] pt-2 pb-2 pl-5 pr-5
-            hover:bg-[#2C742F] duration-150 h-[45px]"
+            hover:bg-[#2C742F] duration-150 lg:h-[45px] md:h-[40px]"
             >
               Search
             </button>
@@ -126,40 +219,10 @@ function Navbar() {
               </p>
             </div>
           </div>
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="focus:outline-none"
-            >
-              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
         </div>
 
-        <div
-          className={`mobile-menu ${
-            isMobileMenuOpen ? "mobile-menu-open" : ""
-          } bg-[#333333] text-white`}
-        >
-          <ul className="flex flex-col items-center space-y-5 py-5">
-            {navItems.map((value, index) => (
-              <li key={index}>
-                <NavLink
-                  to={value.path}
-                  className={({ isActive }) =>
-                    isActive ? "text-green-500" : "text-white"
-                  }
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {value.link}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="desktop-menu flex justify-between text-center mt-5 md:mx-auto md:px-28 bg-[#333333]">
-          <ul className="text-grey md:flex space-x-8 m-5">
+        <div className="desktop-menu flex justify-between text-center lg:mt-5 md:mt-3 lg:mx-auto lg:px-28 md:px-10 px-3 bg-[#333333]">
+          <ul className="text-grey md:flex items-center space-x-8  md:text-[14px] lg:text-[16px]">
             {navItems.map((value, index) => (
               <li key={index}>
                 <NavLink
@@ -173,7 +236,7 @@ function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="m-5 md:flex text-grey gap-2">
+          <div className="md:m-5 md:flex text-grey gap-2 md:text-[14px] lg:text-[16px]">
             <LuPhoneCall size={20} />
             <div>(219) 555-0114</div>
           </div>

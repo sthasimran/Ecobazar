@@ -80,7 +80,7 @@ function ClientTestimonials() {
   };
 
   return (
-    <section className="md:mx-auto md:px-28 px-3 mt-3 bg-[#F2F2F2] py-[60px]">
+    <section className="lg:mx-auto lg:px-28 md:px-10 px-3 mt-3 bg-[#F2F2F2] py-[60px]">
       <div className="flex justify-between items-center">
         <div className="text-xl font-medium">Client Testimonials</div>
 

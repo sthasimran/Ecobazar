@@ -7,11 +7,11 @@ import insta5 from "../../assets/image/Instagram5.png";
 
 function InstagramPage() {
   return (
-    <section className="md:mx-auto md:px-28 px-3 mt-10 mb-5">
+    <section className="lg:mx-auto lg:px-28 md:px-10 px-3 mt-10 mb-5">
       <div className="flex items-center justify-center font-semibold text-xl leading-[38.4px] mb-4">
         Follow us on Instagram
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         <img src={insta1} className="w-full h-auto rounded" alt="Instagram 1" />
         <img src={insta2} className="w-full h-auto rounded" alt="Instagram 2" />
         <img src={insta3} className="w-full h-auto rounded" alt="Instagram 3" />

@@ -14,7 +14,7 @@ function FeaturedProducts() {
   const products = useSelector((state) => state.products.featureProductList);
 
   return (
-    <section className="md:mx-auto md:px-28 px-3 mt-3">
+    <section className="lg:mx-auto lg:px-28 md:px-10 px-3 mt-3">
       <div>
         <div className="flex justify-between items-center">
           <div className="text-xl font-medium">Featured Products</div>
@@ -22,7 +22,7 @@ function FeaturedProducts() {
             View All <GoArrowRight />
           </div>
         </div>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {products.map((item, index) => (
             <Card
               key={index} 

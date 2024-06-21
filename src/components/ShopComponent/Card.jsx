@@ -24,8 +24,8 @@ const Card = ({
       <NavLink to={`/pages/` + id}>
         <div className="m-auto " onClick={() => dispatch(singleProductFun(id))}>
           <div className="group/item flex flex-col items-center relative">
-            <div className="border rounded-md relative group hover:border-[#20B526] hover:shadow-md p-3">
-              <img src={img} alt="" className="h-[200px] w-[300px]" />
+            <div className=" h-[300px] border rounded-md relative group hover:border-[#20B526] hover:shadow-md p-3">
+              <img src={img} alt="" className="h-[200px] w-[250px]" />
               {sale && (
                 <span className="absolute bg-[#EA4B48] text-white text-[14px] px-[8px] py-[8px] rounded-md top-[16px] left-[16px]">
                   Sale 50%
@@ -63,7 +63,7 @@ const Card = ({
                   </div>
                 </div>
               </div>
-              <div className="absolute right-2 bottom-6 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white">
+              <div className="absolute right-2 bottom-6 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center group-hover:bg-primary bag hover:text-white">
                 <HiOutlineShoppingBag />
               </div>
             </div>

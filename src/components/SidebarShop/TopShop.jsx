@@ -15,10 +15,10 @@ const TopShop = () => {
   ];
   return (
     <div>
-      <div className=" flex justify-between container mx-auto px-28 w-full items-center py-4">
+      <div className=" md:flex justify-between lg:mx-auto lg:px-28 md:px-10 px-3 w-full items-center py-4">
         <div className="flex gap-16 w-full items-center ">
           <div className="w-1/4 ">
-            <button className=" bg-[#00B207] w-2/4 px-4 py-3 rounded-3xl text-white flex items-center gap-2 text-center">
+            <button className=" bg-[#00B207] lg:w-2/4 px-4 py-3 rounded-3xl text-white md:flex items-center gap-2 text-center hidden">
               {" "}
               Filter <LuSettings2 />
             </button>
@@ -46,7 +46,7 @@ const TopShop = () => {
             </select>
           </div>
         </div>
-        <div className="text-sm  w-1/4 text-end font-semibold">
+        <div className="text-sm  w-1/4 text-end font-semibold ">
           {products.length} <span className=" font-light">Results Found</span>{" "}
         </div>
       </div>

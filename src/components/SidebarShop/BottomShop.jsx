@@ -12,7 +12,7 @@ const BottomShop = () => {
   // console.log(result)
   return (
     <div>
-      <div className="w-full  container mx-auto px-28 flex mb-3">
+      <div className="w-full  lg:mx-auto lg:px-28 md:px-10 px-3 flex mb-3">
         <div className=" w-1/4 mr-4">
           <Category />
           <PriceRange />

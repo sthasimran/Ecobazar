@@ -15,7 +15,7 @@ function Products() {
   console.log(products)
 
   return (
-    <section className="mt-5 mb-2 md:mx-auto md:px-28 px-3 ">
+    <section className="mt-5 mb-2 lg:mx-auto lg:px-28 md:px-10 px-3">
       <div className="">
         <div className="flex justify-between">
           <div className="text-xl font-medium">Popular Products</div>
@@ -23,7 +23,7 @@ function Products() {
             View All <GoArrowRight />
           </div>
         </div>
-        <div className="m-auto grid grid-cols-5 mt-4">
+        <div className="m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4  mt-4">
           {products.map((item, index) => (
             <Card
             id={item.id}

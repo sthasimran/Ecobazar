@@ -10,12 +10,12 @@ const PopularTag = () => {
 
   
   return (
-    <div className="border-b">
+    <div className="border-b mt-4">
       <div
         className="flex items-center justify-between "
         onClick={handleClick1}
       >
-        <h2 className="text-xl font-medium text-[#1A1A1A] cursor-pointer">
+        <h2 className="md:text-base lg:text-xl font-medium text-[#1A1A1A] cursor-pointer">
           Popular Tag
         </h2>
         {showTag ? <FaAngleUp /> : <FaAngleDown />}

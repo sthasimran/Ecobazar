@@ -28,13 +28,13 @@ const CountdownTimer = ({ targetDate }) => {
   });
 
   return (
-    <div className="flex justify-center items-center gap-4 sm:px-4 mt-3 ">
+    <div className="flex justify-center items-center gap-4 sm:px-4 mt-2 ">
       <div className="flex ">
         <div className="flex flex-col justify-center items-center ">
-          <span className=" flex justify-center items-center  text-[24px] font-medium rounded-md">
+          <span className=" flex justify-center items-center  text-[24px] md:text-[20px] lg:text-[24px] font-medium rounded-md">
             {timeLeft?.days}
           </span>
-          <span className=" text-[12px]  font-medium ">
+          <span className=" text-[12px] md:text-[11px] lg:text-[12px] font-medium ">
             {timeLeft?.days == 1 ? "Day" : "Days"}
           </span>
         </div>
@@ -44,10 +44,10 @@ const CountdownTimer = ({ targetDate }) => {
       </div>
       <div className="flex">
         <div className="flex flex-col justify-center items-center ">
-          <span className="flex justify-center items-center  text-[24px] font-medium rounded-md">
+          <span className="flex justify-center items-center  text-[24px] md:text-[20px] lg:text-[24px]  font-medium rounded-md">
             {timeLeft?.hours}
           </span>
-          <span className="text-[12px]  font-medium">
+          <span className="text-[12px] md:text-[11px] lg:text-[12px]  font-medium">
             {timeLeft?.hours == 1 ? "Hour" : "Hours"}
           </span>
         </div>
@@ -58,10 +58,10 @@ const CountdownTimer = ({ targetDate }) => {
 
       <div className="flex">
         <div className="flex flex-col justify-center items-center">
-          <span className="flex justify-center items-center  text-[24px] font-medium rounded-md">
+          <span className="flex justify-center items-center  text-[24px] md:text-[20px] lg:text-[24px]  font-medium rounded-md">
             {timeLeft?.minutes}
           </span>
-          <span className="text-[12px]  font-medium">
+          <span className="text-[12px] md:text-[11px] lg:text-[12px]  font-medium">
             {timeLeft?.minutes == 1 ? "Minute" : "Minutes"}
           </span>
         </div>
@@ -70,10 +70,10 @@ const CountdownTimer = ({ targetDate }) => {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center">
-        <span className="flex justify-center items-center  text-[24px] font-medium rounded-md">
+        <span className="flex justify-center items-center  text-[24px] md:text-[20px] lg:text-[24px]  font-medium rounded-md">
           {timeLeft?.seconds}
         </span>
-        <span className="text-[12px] font-medium">
+        <span className="text-[12px] md:text-[11px] lg:text-[12px] font-medium">
           {timeLeft?.seconds == 1 ? "Second" : "Seconds"}
         </span>
       </div>

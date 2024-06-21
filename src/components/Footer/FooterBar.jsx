@@ -10,11 +10,11 @@ import Secure from "../../assets/image/secure.png";
 
 function FooterBar() {
   return (
-    <section>
-      <div className="md:mx-auto md:px-28 px-3 py-3 bg-[#F7F7F7]">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-          <div className="flex flex-col text-center md:text-left p-2">
-            <p className="font-semibold text-[24px] leading-9">
+    <section className="">
+     <div className="upperFooter  py-3 mt-3 bg-[#F7F7F7]">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 md:gap-6 lg:mx-auto lg:px-28 md:px-10 px-8 ">
+          <div className="flex flex-col  text-center md:text-left lg:p-2 ">
+            <p className="font-semibold lg:text-[24px] lg:leading-9 md:text-lg">
               Subscribe to our Newsletter
             </p>
             <p className="font-normal text-[14px] leading-5 text-[#999999]">
@@ -23,8 +23,8 @@ function FooterBar() {
             </p>
           </div>
           <div className="flex flex-col md:flex-row items-center w-full max-w-lg md:max-w-none">
-            <div className="flex flex-col md:flex-row w-full">
-              <div className="flex py-[12px] pr-[18px] pl-[16px] w-full md:w-[400px] h-[45px] border-solid border-2 rounded-t-md md:rounded-l-full md:rounded-r-none border-grey border-r-0">
+            <div className="flex flex-col md:flex-row md:w-[290px] lg:w-full">
+              <div className="flex py-[12px] pr-[18px] pl-[16px] w-full lg:w-full md:w-[300px] h-[45px] border-solid border-2 rounded-md md:rounded-full  border-grey md:border-r-0">
                 <div className="flex items-center w-full">
                   <input
                     type="email"
@@ -33,7 +33,7 @@ function FooterBar() {
                   />
                 </div>
               </div>
-              <button className="bg-primary w-full md:w-auto rounded-b-md md:rounded-r-full md:rounded-l-none border-primary text-white text-[14px] px-5 py-2 mt-2 md:mt-0 md:ml-[-60px] hover:bg-[#2C742F] duration-150 h-[45px]">
+              <button className="bg-primary w-full md:w-auto rounded-md md:rounded-full border-primary text-white md:text-[14px] px-5 py-2 mt-2 md:mt-0 md:ml-[-60px] hover:bg-[#2C742F] duration-150 h-[45px]">
                 Subscribe
               </button>
             </div>
@@ -53,31 +53,36 @@ function FooterBar() {
             </div>
           </div>
         </div>
-      </div>
+      </div>  
 
-      <footer className="bg-[#1A1A1A]">
-        <div className="md:mx-auto md:px-28 px-3 py-8 text-white">
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
-            <div className="flex flex-col gap-2 col-span-2">
+
+      <footer className="bg-[#1A1A1A] lg:mx-auto lg:px-28 md:px-10 px-8">
+        <div className=" py-8 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-6 lg:gap-10 gap-8 md:gap-18">
+            <div className="flex flex-col gap-2 col-span-2 ">
               <div className="text-center md:text-left">
                 <a className="h-8 w-8 text-[32px] leading-9 font-medium flex items-center space-x-3">
                   <img src={logoBlack} alt="Ecobazar Logo" />
-                  <span>Ecobazar</span>
+                  <span >Ecobazar</span>
                 </a>
               </div>
               <p className="font-normal text-[14px] leading-5 text-[#808080]">
                 Morbi cursus porttitor enim lobortis molestie. Duis gravida
                 turpis dui, eget bibendum magna congue nec.
               </p>
-              <div className="flex gap-2">
-                <span className="border-b-2 border-primary">(219) 555-0114</span>
-                <span className="text-[#808080]">or</span>
-                <span className="border-b-2 border-primary">Proxy@gmail.com</span>
+              <div className="flex flex-row md:flex-col lg:flex-row gap-2 text-[14px] md:[10px] lg:text-[16px]">
+                <p className="hover-border">(219) 555-0114</p>
+                <p className="text-[#808080]">or</p>
+                <p className="hover-border">
+                  Proxy@gmail.com
+                </p>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="font-medium text-[16px] leading-6">My Account</div>
-              <div className="font-normal text-[14px] leading-5 text-[#999999]">
+              <div className="font-medium text-[14px] md:text-[16px] leading-6">
+                My Account
+              </div>
+              <div className="font-normal text-[13px] md:text-[14px] leading-5 text-[#999999]">
                 <p className="hover:text-gray-200">My Account</p>
                 <p className="hover:text-gray-200">Order History</p>
                 <p className="hover:text-gray-200">Shopping Cart</p>
@@ -85,8 +90,8 @@ function FooterBar() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="font-medium text-[16px] leading-6">Helps</div>
-              <div className="font-normal text-[14px] leading-5 text-[#999999]">
+              <div className="font-medium text-[14px] md:text-[16px] leading-6">Helps</div>
+              <div className="font-normal text-[13px] md:text-[14px]  leading-5 text-[#999999]">
                 <p className="hover:text-gray-200">Contact</p>
                 <p className="hover:text-gray-200">FAQs</p>
                 <p className="hover:text-gray-200">Terms & Conditions</p>
@@ -94,8 +99,8 @@ function FooterBar() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="font-medium text-[16px] leading-6">Proxy</div>
-              <div className="font-normal text-[14px] leading-5 text-[#999999]">
+              <div className="font-medium text-[14px] md:text-[16px] leading-6">Proxy</div>
+              <div className="font-normal text-[13px] md:text-[14px]  leading-5 text-[#999999]">
                 <p className="hover:text-gray-200">About</p>
                 <p className="hover:text-gray-200">Shop</p>
                 <p className="hover:text-gray-200">Product</p>
@@ -103,8 +108,10 @@ function FooterBar() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="font-medium text-[16px] leading-6">Categories</div>
-              <div className="font-normal text-[14px] leading-5 text-[#999999]">
+              <div className="font-medium text-[14px] md:text-[16px] leading-6">
+                Categories
+              </div>
+              <div className="font-normal text-[13px] md:text-[14px]  leading-5 text-[#999999]">
                 <p className="hover:text-gray-200">Fruit & Vegetables</p>
                 <p className="hover:text-gray-200">Meat & Fish</p>
                 <p className="hover:text-gray-200">Bread & Bakery</p>

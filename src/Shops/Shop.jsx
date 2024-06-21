@@ -1,8 +1,8 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BottomShop from "../components/SidebarShop/BottomShop";
-import Breadcrums from "../components/SidebarShop/Breadcrums";
-import PaginationComponent from "../components/SidebarShop/PaginationComponent";
+import Breadcrumbs from "../components/SidebarShop/Breadcrumbs";
+import MobileShop from "../components/SidebarShop/MobileShop";
 import TopShop from "../components/SidebarShop/TopShop";
 import { resetFilters } from "../features/slices/ProductSlice";
 
@@ -10,11 +10,26 @@ const Shop = () => {
 
   const dispatch = useDispatch();
   const filteredProducts = useSelector((state) => state.products.filteredProducts);
+  const [isMobile, setIsMobile] = useState(false);
+  
 
   useEffect(() => {
     // Dispatch the resetFilters action when the component mounts
     dispatch(resetFilters());
   }, [dispatch]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(innerWidth <= 767);
+    };
+
+    handleResize();
+    addEventListener("resize", handleResize);
+
+    return () => {
+      removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // const products = data;
 
@@ -80,11 +95,13 @@ const Shop = () => {
   // const result = filteredData(products, selectedCategory);
   // console.log(result);
   return (
+    
     <div>
-      <Breadcrums />
-      <TopShop />
-      <BottomShop />
-      <PaginationComponent/>
+      <Breadcrumbs/>
+      {isMobile ? (<MobileShop/>): <> <TopShop />
+      <BottomShop /></>}
+     
+      {/* <PaginationComponent/> */}
     </div>
   );
 };

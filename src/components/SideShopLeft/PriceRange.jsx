@@ -16,13 +16,13 @@ const PriceRange = () => {
     setValue(newValue);
   };
   return (
-    <div>
+    <div className="hidden lg:block">
       <div className=" border-b pb-4">
         <div
           className="flex items-center justify-between "
           onClick={handleClick}
         >
-          <h2 className="text-xl font-medium text-[#1A1A1A] cursor-pointer mb-2">
+          <h2 className="md:text-base lg:text-xl font-medium text-[#1A1A1A] cursor-pointer mb-2">
             Price
           </h2>
           {showPrice ? <FaAngleUp /> : <FaAngleDown />}

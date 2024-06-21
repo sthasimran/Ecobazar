@@ -10,7 +10,7 @@ const Category = () => {
   return (
     <div className=" border-b pb-4">
       <div className="flex items-center justify-between " onClick={handleClick}>
-        <h2 className="text-xl font-medium text-[#1A1A1A] cursor-pointer">
+        <h2 className=" md:text-base lg:text-xl font-medium text-[#1A1A1A] cursor-pointer">
           All Catagories
         </h2>
         {showCategories ? <FaAngleUp /> : <FaAngleDown />}

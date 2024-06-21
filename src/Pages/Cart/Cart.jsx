@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Coupon from "../../Pages/Cart/Coupon";
 import Counter from "../../components/Counter";
-import Breadcrumbs from "../../components/SidebarShop/Breadcrums";
+import Breadcrumbs from "../../components/SidebarShop/Breadcrumbs";
 import { removeFromCart, updateCart } from "../../features/slices/CartSlice";
 
 const Cart = () => {
@@ -55,15 +55,15 @@ const Cart = () => {
     <div>
       <Breadcrumbs />
 
-      <section className="m-4 md:mx-auto md:px-28 px-3">
+      <section className="m-4 lg:mx-auto lg:px-28 md:px-10 px-3">
         <div>
-          <p className="text-center text-[32px] leading-9 font-semibold">
+          <p className="text-center text-2xl md:text-[32px] md:leading-9 font-semibold">
             My Shopping Cart
           </p>
         </div>
         {cart.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-5">
-            <div className="col-span-2">
+            <div className="col-span-1 md:col-span-2">
               <div>
                 <div className="overflow-auto rounded-lg shadow">
                   <table className="w-full hidden md:table">
@@ -90,7 +90,7 @@ const Cart = () => {
                         return (
                           <tr className="bg-white" key={index}>
                             <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-                              <div className="flex items-center gap-2">
+                              <div className="lg:flex items-center gap-2">
                                 <img
                                   src={item.img}
                                   alt="product"
@@ -126,15 +126,63 @@ const Cart = () => {
                       })}
                     </tbody>
                   </table>
+
+
+                  {/* for mobile */}
+                  <div className="block md:hidden">
+                    {localCart.map((item, index) => {
+                      const subTotal = item.price * item.quantity;
+                      return (
+                        <div
+                          key={index}
+                          className="flex flex-col bg-white m-4  rounded-lg border-b-2"
+                        >
+                          <div className="flex items-center gap-2 mb-2">
+                            <img
+                              src={item.img}
+                              alt="product"
+                              className="w-[100px] h-[100px]"
+                            />
+                            <div>
+                              <p className="text-[#1A1A1A] text-base font-normal mb-1">
+                                {item.title}
+                              </p>
+                              <p className="text-[#1A1A1A] text-base font-normal mb-1">
+                                ${item.price}
+                              </p>
+                              <div className="flex items-center gap-3 mb-2">
+                                <Counter
+                                  count={item.quantity}
+                                  onIncrement={() => handleIncrement(index)}
+                                  onDecrement={() => handleDecrement(index)}
+                                  
+                                />
+                                <TiDeleteOutline
+                                  size={25}
+                                  color="#666666"
+                                  onClick={() => handleRemoveFromCart(item)}
+                                />
+                              </div>
+
+                                <p className="text-[#1A1A1A] text-base font-normal">
+                                  Subtotal: ${subTotal}
+                                </p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="flex flex-col md:flex-row items-center justify-between  p-2 border">
+                <div className="flex flex-row items-center justify-between p-2 border">
                   <NavLink to="/shop">
                     <div className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D] cursor-pointer mb-2 md:mb-0">
                       Return to shop
                     </div>
                   </NavLink>
                   <div
-                    className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D] cursor-pointer"
+                    className="bg-[#F2F2F2] p-3 rounded-full text-sm font-semibold text-[#4D4D4D] cursor-pointer mb-2 md:mb-0"
                     onClick={handleUpdateCart}
                   >
                     Update Cart
@@ -147,11 +195,11 @@ const Cart = () => {
             <div className="col-span-1">
               <div className="border rounded-lg">
                 <div className="container mx-auto p-4">
-                  <p className="text-[#1A1A1A] text-xl font-medium">
-                    Cart Total
+                  <p className="text-[#1A1A1A] md:text-base lg:text-xl font-medium">
+                    Cart Total 
                   </p>
                   <div className="overflow-x-auto">
-                    <table className="min-w-full bg-white ">
+                    <table className="min-w-full bg-white">
                       <tbody>
                         <tr>
                           <th className="px-4 py-2 border-b text-left text-[#4D4D4D] text-sm font-normal">
