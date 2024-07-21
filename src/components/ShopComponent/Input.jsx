@@ -7,11 +7,11 @@ const Input = () => {
   const category = [
     "Fresh Fruit",
     "Vegetable",
-    "Cooking",
-    "Snacks",
-    "Beverages",
-    "Beauty & Health",
-    "Bread & Bakery",
+    // "Cooking",
+    // "Snacks",
+    // "Beverages",
+    // "Beauty & Health",
+    // "Bread & Bakery",
   ];
   const dispatch = useDispatch();
 

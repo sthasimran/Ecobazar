@@ -8,7 +8,6 @@ import ProductFilter from "./ProductFilter";
 const MobileShop = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const products = useSelector((state) => state.products.filteredProducts);
-  // console.log(products);
   const dispatch = useDispatch();
   const list = [
     "LatestProducts",
@@ -16,20 +15,28 @@ const MobileShop = () => {
     "HotDeals Products",
     "Popular Products",
   ];
-  const [showCategories, setShowCategories] = useState(false);
-  const handleClick = () => {
-    setShowCategories(!showCategories);
-  };
+
   return (
     <section className="mx-auto md:px-28 px-3 mt-3">
       <div className="flex justify-end my-3">
-        <div className=" text-sm  font-semibold ">
+        <div className=" text-sm font-semibold ">
           {products.length} <span className=" font-light ml-1">Results Found</span>
         </div>
       </div>
 
       <div className="flex justify-between">
-        <div className="sortButton">
+        <div className="categoryButton">
+          <button className="p-1 border rounded-md w-40 text-white text-[14px] leading-[21px] font-normal bg-primary">
+            <div className="flex items-center justify-between">
+              <p className="cursor-pointer">All Categories</p>
+            </div>
+          </button>
+          <div className="bg-white">
+            <Input />
+          </div>
+        </div>
+
+        <div className="relative sortButton">
           <button
             className="flex items-center justify-between p-1 border rounded-md w-32 text-white text-[14px] leading-[21px] font-normal bg-primary"
             onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -38,7 +45,7 @@ const MobileShop = () => {
             {dropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
           </button>
           {dropdownOpen && (
-            <ul className="absolute mt-1 w-48 border rounded-md bg-white shadow-lg">
+            <ul className="absolute mt-1 w-48 border rounded-md bg-white shadow-lg z-10">
               {list.map((item, index) => (
                 <li
                   key={index}
@@ -52,22 +59,6 @@ const MobileShop = () => {
                 </li>
               ))}
             </ul>
-          )}
-        </div>
-        <div className="categoryButton">
-          <button className=" p-1 border rounded-md w-40 text-white text-[14px] leading-[21px] font-normal  bg-primary">
-            <div
-              className="flex items-center justify-between"
-              onClick={handleClick}
-            >
-              <p className="cursor-pointer">All Catagories</p>
-              {showCategories ? <FaAngleUp /> : <FaAngleDown />}
-            </div>
-          </button>
-          {showCategories && (
-            <div className="bg-white">
-              <Input />
-            </div>
           )}
         </div>
       </div>

@@ -12,7 +12,7 @@ const Coupon = () => {
           placeholder="Enter code"
           className="border rounded-3xl px-4 py-2 w-full md:w-[300px] mb-2 md:mb-0 md:mr-2"
         />
-        <button className="bg-[#333333] border rounded-full lg:px-6 lg:py-2 md:px-4 md:py-3 text-[#FFFFFF] lg:text-base md:text-[12px] font-semibold">
+        <button className="bg-[#333333] border rounded-full lg:px-6 lg:py-2 md:px-4 md:py-3 px-6 py-2 text-[#FFFFFF] lg:text-base md:text-[12px] font-semibold">
           Apply Coupon
         </button>
       </div>
